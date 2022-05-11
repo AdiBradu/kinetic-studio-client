@@ -1,0 +1,22 @@
+@import '../../../../styles/variables.module.scss';
+.map-info{
+    display: flex;
+    align-items: center;
+    gap: $unit;
+    svg{
+        width: calc(3 * #{$unit});
+        height: auto;
+        @media (min-width: $md) {
+            width: calc(4 * #{$unit});
+        }
+    }
+    p{
+        font-size: 0.75rem;
+        max-width: 22ch;
+        line-height: 1.3;
+        color: rgb(216, 216, 216);
+        @media (min-widt: $xxl) {
+            font-size: 0.875rem;
+        }
+    }
+}

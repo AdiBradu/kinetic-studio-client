@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "icon": "assets/icons/iconCardBenefitOnline.svg",
+        "header": "programare online",
+        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "id": 2,
+        "icon": "assets/icons/iconCardBenefitFlexibilitate.svg",
+        "header": "flexibilitate",
+        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "id": 3,
+        "icon": "assets/icons/iconCardBenefitPayment.svg",
+        "header": "plata cu cardul",
+        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "id": 4,
+        "icon": "assets/icons/iconCardBenefitAnulare.svg",
+        "header": "anuleaza oricand",
+        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+  ]
+  

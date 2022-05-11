@@ -1,0 +1,34 @@
+@import '../../styles/variables.module.scss';
+button{
+    background-color: transparent;
+    padding: calc(0.75 * #{$unit}) calc(1.5 * #{$unit});
+}
+.programare{
+    margin-left: calc(4 * #{$unit});
+    border: 1px solid $primaryColor;
+    border-radius: calc(0.25 * #{$unit});
+    &:hover{
+        cursor: pointer;
+        opacity: 0.75;
+    }
+    p{
+        color: $primaryColor;
+        font-size: calc(0.8125 * #{$unit});
+        text-transform: uppercase;
+    }
+}
+.btn-programare-solid{
+    position: relative;
+    background-color: $primaryColor;
+    border: 1px solid $primaryColor;
+    border-radius: calc(0.25 * #{$unit});
+    &:hover{
+        cursor: pointer;
+        opacity: 0.75;
+    }
+    p{
+        color: $textLight;
+        font-size: calc(0.8125 * #{$unit});
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,47 @@
+@import '../../styles/variables.module.scss';
+.menu{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    background-color: $primaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $unit;
+    @media (min-width: $xxl) {
+        padding: 0px;
+    }
+    ul{
+        width: 100%;
+        :last-child{
+            margin-bottom: 0px;
+        }
+        li{
+            margin-bottom: $unit;
+            P{
+                color: $textLight;
+                text-align: right;
+            }
+            :hover{
+                cursor: pointer;
+            }
+        }
+    }
+    @media (min-width: $xxl) {
+        position: relative;
+        background-color: transparent;
+        ul{
+            display: flex;
+            li{
+                margin-bottom: 0px;
+                margin-left: calc(2 * #{$unit});
+                p{
+                    font-size: calc(0.8125 * #{$unit});
+                }
+            }
+        }
+    }
+}

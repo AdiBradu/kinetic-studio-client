@@ -1,0 +1,14 @@
+@import '../../styles/variables.module.scss';
+button.menu-toggler{
+    padding: 0px;
+    background-color: transparent;
+    :hover{
+        cursor: pointer;
+    }
+    svg{
+        position: relative;
+        z-index: 102;
+        width: calc(1.5 * #{$unit});
+        height: calc(1.5 * #{$unit});
+    }
+}

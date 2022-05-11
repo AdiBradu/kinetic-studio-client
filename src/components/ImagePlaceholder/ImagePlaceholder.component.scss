@@ -1,0 +1,28 @@
+@import '../../styles/variables.module.scss';
+img{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+img.hero-image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: brightness(50%)
+}
+
+img.masaj-relaxare, img.masaj-terapeutic{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    @media (min-width: $md) {
+        width: 50%;
+        height: 480px;
+    }
+    @media (min-width: $xxl) {
+        width: 50%;
+        height: 800px;
+    }
+}

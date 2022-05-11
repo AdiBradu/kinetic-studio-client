@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "route": "home"
+  },
+  {
+    "id": 2,
+    "route": "tipuri de masaje"
+  },
+  {
+    "id": 3,
+    "route": "servicii"
+  },
+  {
+    "id": 4,
+    "route": "terapeuti"
+  }
+]

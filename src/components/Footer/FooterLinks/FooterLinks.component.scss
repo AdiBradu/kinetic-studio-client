@@ -1,0 +1,24 @@
+@import '../../../styles/variables.module.scss';
+.footer-links{
+    gap: $unit;
+    width: 50%;
+    max-width: calc(50% - 8px);
+    @media (min-width: $md) {
+        max-width: calc(25% - 8px);
+    }
+    ul{
+        li{
+            margin-top: $unit;
+            &:hover{
+                cursor: pointer;
+                opacity: 0.75;
+            }
+            &:first-child{
+                margin-top: 0px;
+            }
+            p{
+                text-transform: capitalize;
+            }
+        }
+    }
+}
