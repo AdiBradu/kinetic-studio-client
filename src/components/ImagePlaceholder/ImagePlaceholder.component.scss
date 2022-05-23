@@ -26,3 +26,19 @@ img.masaj-relaxare, img.masaj-terapeutic{
         height: 800px;
     }
 }
+
+img.netopia{
+    position: relative;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: auto;
+}
+
+img.card-image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}

@@ -22,6 +22,8 @@ button{
     background-color: $primaryColor;
     border: 1px solid $primaryColor;
     border-radius: calc(0.25 * #{$unit});
+    width: 100%;
+    max-width: 240px;
     &:hover{
         cursor: pointer;
         opacity: 0.75;
@@ -30,5 +32,49 @@ button{
         color: $textLight;
         font-size: calc(0.8125 * #{$unit});
         text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.btn-card-programare{
+    width: 100%;
+    position: relative;
+    border: 1px solid $primaryColor;
+    border-radius: calc(0.25 * #{$unit});
+    padding: calc(0.5 * #{$unit}) calc(1 * #{$unit});
+    &:hover{
+        cursor: pointer;
+        opacity: 0.75;
+    }
+    p{
+        color: $primaryColor;
+        text-transform: uppercase;
+        font-size: 0.8125rem;
+        line-height: 100%;
+        @media (min-width: $xxl) {
+            font-size: 0.8125rem;
+        }
+    }
+}
+
+.btn-programare-client{
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background-color: $primaryColor;
+    border: 1px solid $primaryColor;
+    border-radius: calc(0.25 * #{$unit});
+    padding: calc(1 * #{$unit}) calc(1.5 * #{$unit});
+    margin-left: auto;
+    margin-right: auto;
+    &:hover{
+        cursor: pointer;
+        opacity: 0.75;
+    }
+    p{
+        color: $textLight;
+        font-size: calc(0.8125 * #{$unit});
+        text-transform: uppercase;
+        font-weight: 600;
     }
 }

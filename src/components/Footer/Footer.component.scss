@@ -1,47 +1,49 @@
 @import '../../styles/variables.module.scss';
 .footer{
+    display: flex;
+    flex-direction: column;
     background-color: $primaryColorLight;
     border-top: 1px solid $border;
     margin-top: calc(6 * #{$unit});
     padding: $unit 0px;
-    @media (min-width: $md) {
-        padding: calc(4 * #{$unit}) 0px $unit 0px;
-    }
-    .container{
-        gap: $unit;
+    overflow-x: hidden;
+    .container, .container-fluid{
+        display: flexbox;
+        flex-wrap: wrap;
         .follow-us{
             gap: $unit;
             width: 50%;
-            max-width: calc(50% - 8px);
             @media (min-width: $md) {
-                max-width: calc(25% - 16px);
+                flex-grow: 1;
+                flex-basis: 0;
             }
             .social-media-group{
                 display: flex;
             }
         }
-        img{
-            margin-top: $unit;
-            width: 100%;
-            height: auto;
+        .netopia{
+            margin-top: calc(2 * #{$unit});
             @media (min-width: $md) {
                 margin-top: 0px;
-                max-width: calc(25% - 16px);
+                flex-grow: 1;
+                flex-basis: 0;
             }
         }
         .footer-logo{
             width: 100%;
-            margin-top: $unit;
-            display: flex;
+            margin-top: calc(2 * #{$unit});
             @media (min-width: $md) {
                 margin-top: 0px;
-                max-width: calc(25% - 16px);
+                flex-grow: 1;
+                flex-basis: 0;
                 svg{
                     margin-left: auto;
                 }
             }
         }
         .footer-copyright{
+            display: flex;
+            width: 100%;
             margin-top: calc(2 * #{$unit});
             @media (min-width: $md) {
                 margin-top: calc(4 * #{$unit});

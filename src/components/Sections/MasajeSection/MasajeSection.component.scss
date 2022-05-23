@@ -36,12 +36,12 @@
                 justify-content: center;
                 gap: $unit;
                 width: 100%;
-                padding: calc(2 * #{$unit}) $unit;
+                padding: calc(1 * #{$unit}) 0px;
                 @media (min-width: $md) {
                     margin-left: auto;
                     width: 50%;
                     height: 480px;
-                    padding: calc(2 * #{$unit});
+                    padding: 0px 0px 0px calc(2 * #{$unit});
                 }
                 @media (min-width: $xxl) {
                     max-width: 480px;
@@ -61,6 +61,7 @@
                 @media (min-width: $md) {
                     margin-left: 0px;
                     margin-right: auto;
+                    padding: 0px calc(2 * #{$unit}) 0px 0px;
                 }
             }
         }

@@ -7,7 +7,7 @@ import { AppContext } from '../../../contexts/AppContext';
 
 export default function MasajeSection() {
     const {isTablet} = useContext(AppContext);
-    console.log(isTablet)
+
     return (
         <div className='masaje-section'>
             <div className={isTablet ? 'row flex-row' : 'row flex-column'}>

@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <div className='navbar'>
-      <div className={isTablet ? "container-fluid flex mx-auto space-between px py" : "container flex mx-auto space-between px py"}>
+      <div className={isTablet ? "container-fluid flex mx-auto space-between padding" : "container flex mx-auto space-between padding"}>
         <Logo/>
         {
           !isDesktop ? <MenuToggler/> : ''

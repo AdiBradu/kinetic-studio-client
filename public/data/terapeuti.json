@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "/thumbnails/thmb00.jpg",
+    "nume": "nume",
+    "prenume": "prenume",
+    "telefon": "0745898663",
+    "email": "nume@gmail.com",
+    "specializare": ["terapeutic"],
+    "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
+    "calendar": [
+      {
+        "timeSlotStart": 1651816800000,
+        "timeSlotEnd": 1651845600000
+      },
+      {
+        "timeSlotStart": 1651903200000,
+        "timeSlotEnd": 1651932000000
+      }
+    ],
+    "programari": [
+      {
+        "timeSlotStart": 1651910400000,
+        "timeSlotEnd": 1651917600000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "thumbnail": "/thumbnails/thmb02.jpg",
+    "nume": "snow",
+    "prenume": "john",
+    "telefon": "0745898663",
+    "email": "nume@gmail.com",
+    "specializare": ["terapeutic"],
+    "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
+    "calendar": [
+      {
+        "timeSlotStart": 1652857200000,
+        "timeSlotEnd": 1652882400000
+      },
+      {
+        "timeSlotStart": 1652943600000,
+        "timeSlotEnd": 1651932000000
+      },
+      {
+        "timeSlotStart": 1652943600000,
+        "timeSlotEnd": 1653055200000
+      },
+      {
+        "timeSlotStart": 1653030000000,
+        "timeSlotEnd": 1652191200000
+      },
+      {
+        "timeSlotStart": 1653116400000,
+        "timeSlotEnd": 1653141600000
+      },
+      {
+        "timeSlotStart": 1653202800000,
+        "timeSlotEnd": 1653228000000
+      }
+
+    ],
+    "programari": [
+      {
+        "timeSlotStart": 1651910400000,
+        "timeSlotEnd": 1651917600000
+      },
+      {
+        "timeSlotStart": 1652256000000,
+        "timeSlotEnd": 1652265000000
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "thumbnail": "/thumbnails/thmb03.jpg",
+    "nume": "lannister",
+    "prenume": "cersei",
+    "telefon": "0745898663",
+    "email": "nume@gmail.com",
+    "specializare": ["relaxare"],
+    "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
+    "calendar": [
+      {
+        "timeSlotStart": 1651575600000,
+        "timeSlotEnd": 1651597200000
+      },
+      {
+        "timeSlotStart": 1651644000000,
+        "timeSlotEnd": 1651672800000
+      },
+      {
+        "timeSlotStart": 1651755600000,
+        "timeSlotEnd": 1651780800000
+      }
+    ],
+    "programari": [
+      {
+        "timeSlotStart": 1651762800000,
+        "timeSlotEnd": 1651770000000
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "thumbnail": "/thumbnails/thmb01.jpg",
+    "nume": "david",
+    "prenume": "mihai",
+    "telefon": "0745898663",
+    "email": "nume@gmail.com",
+    "specializare": ["terapeutic", "relaxare"],
+    "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
+    "calendar": [
+      {
+        "timeSlotStart": 1651816800000,
+        "timeSlotEnd": 1651845600000
+      },
+      {
+        "timeSlotStart": 1651903200000,
+        "timeSlotEnd": 1651932000000
+      }
+    ],
+    "programari": [
+      {
+        "timeSlotStart": 1651910400000,
+        "timeSlotEnd": 1651917600000
+      }
+    ]
+  }
+]

@@ -8,7 +8,7 @@
     gap: $unit;
     background-color: $backgroundLight;
     box-shadow: 0px 8px 16px rgba(128, 128, 128, 0.15);
-    border: 1px solid $primaryColorLight;
+    border: 1px solid $border;
     border-radius: 8px;
     @media (min-width: $md) {
         max-width: calc(50% - 8px);

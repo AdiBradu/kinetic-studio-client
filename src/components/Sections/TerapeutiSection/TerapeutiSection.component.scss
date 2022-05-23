@@ -1,0 +1,26 @@
+@import '../../../styles/variables.module.scss';
+.terapeuti-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: calc(2 * #{$unit});
+    margin-top: calc(6 * #{$unit});
+    .slider-terapeuti{
+        width: 100%;
+        position: relative;
+        display: flex;
+        .slider-terapeuti-group{
+            position: relative;
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            padding-left: 16px;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            @media (min-width: $md) {
+                padding-left: 0px;
+            }
+        }
+    }
+}

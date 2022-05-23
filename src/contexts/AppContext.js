@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export const AppContext = createContext();
@@ -10,6 +10,8 @@ export const AppProvider = (props) => {
     const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
     const isLandscape = useMediaQuery({ query: "(orientation: landscape)" });
 
+    const [programareFromCard, setProgramareFromCard] = useState();
+
     return (
         <AppContext.Provider
             value={{
@@ -18,6 +20,7 @@ export const AppProvider = (props) => {
                 isDesktop,
                 isPortrait,
                 isLandscape,
+                programareFromCardObj: [programareFromCard, setProgramareFromCard]
             }}
         >
             {props.children}

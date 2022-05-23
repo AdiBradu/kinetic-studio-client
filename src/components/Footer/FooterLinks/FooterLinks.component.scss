@@ -1,10 +1,11 @@
 @import '../../../styles/variables.module.scss';
 .footer-links{
-    gap: $unit;
     width: 50%;
-    max-width: calc(50% - 8px);
+    flex-grow: 0;
+    gap: $unit;
     @media (min-width: $md) {
-        max-width: calc(25% - 8px);
+        flex-grow: 1;
+        flex-basis: 0;
     }
     ul{
         li{
