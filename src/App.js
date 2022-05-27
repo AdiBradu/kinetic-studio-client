@@ -2,17 +2,22 @@ import './App.scss';
 import Navbar from './components/Navbar/Navbar.component.jsx';
 import LandingPage from './pages/LandingPage/LandingPage.component.jsx';
 import Footer from './components/Footer/Footer.component';
-import {NavbarProvider} from './contexts/NavbarContext.js';
+import { NavbarProvider } from './contexts/NavbarContext.js';
+import { documentHeight, wathcResize } from './utils.js';
+
+documentHeight();
+wathcResize();
 
 function App() {
   return (
     <div className="App">
       <NavbarProvider>
-        <Navbar/>
+        <Navbar />
       </NavbarProvider>
 
-      <LandingPage/>
-      <Footer/>
+      <LandingPage />
+
+      <Footer />
     </div>
   );
 }

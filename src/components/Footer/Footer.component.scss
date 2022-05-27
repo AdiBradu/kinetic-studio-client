@@ -1,53 +1,54 @@
 @import '../../styles/variables.module.scss';
-.footer{
-    display: flex;
-    flex-direction: column;
-    background-color: $primaryColorLight;
-    border-top: 1px solid $border;
-    margin-top: calc(6 * #{$unit});
-    padding: $unit 0px;
-    overflow-x: hidden;
-    .container, .container-fluid{
-        display: flexbox;
-        flex-wrap: wrap;
-        .follow-us{
-            gap: $unit;
-            width: 50%;
-            @media (min-width: $md) {
-                flex-grow: 1;
-                flex-basis: 0;
-            }
-            .social-media-group{
-                display: flex;
-            }
-        }
-        .netopia{
-            margin-top: calc(2 * #{$unit});
-            @media (min-width: $md) {
-                margin-top: 0px;
-                flex-grow: 1;
-                flex-basis: 0;
-            }
-        }
-        .footer-logo{
-            width: 100%;
-            margin-top: calc(2 * #{$unit});
-            @media (min-width: $md) {
-                margin-top: 0px;
-                flex-grow: 1;
-                flex-basis: 0;
-                svg{
-                    margin-left: auto;
-                }
-            }
-        }
-        .footer-copyright{
-            display: flex;
-            width: 100%;
-            margin-top: calc(2 * #{$unit});
-            @media (min-width: $md) {
-                margin-top: calc(4 * #{$unit});
-            }
-        }
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $primaryColorLight;
+  border-top: 1px solid $border;
+  margin-top: calc(6 * #{$unit});
+  padding: $unit 0px;
+  overflow-x: hidden;
+  .container,
+  .container-fluid {
+    display: flexbox;
+    flex-wrap: wrap;
+    .follow-us {
+      gap: $unit;
+      width: 50%;
+      @media (min-width: $md) {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+      .social-media-group {
+        display: flex;
+      }
     }
+    .netopia {
+      margin-top: calc(2 * #{$unit});
+      @media (min-width: $md) {
+        margin-top: 0px;
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+    }
+    .footer-logo {
+      width: 100%;
+      margin-top: calc(2 * #{$unit});
+      @media (min-width: $md) {
+        margin-top: 0px;
+        flex-grow: 1;
+        flex-basis: 0;
+        svg {
+          margin-left: auto;
+        }
+      }
+    }
+    .footer-copyright {
+      display: flex;
+      width: 100%;
+      margin-top: calc(2 * #{$unit});
+      @media (min-width: $md) {
+        margin-top: calc(4 * #{$unit});
+      }
+    }
+  }
 }

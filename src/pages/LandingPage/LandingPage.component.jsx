@@ -9,13 +9,13 @@ import ProgramareSection from '../../components/Sections/ProgramareSection/Progr
 
 export default function LandingPage() {
   return (
-    <div className='landing-page'>
-        <HeroSection/>
-        <BenefitsSection/>
-        <MasajeSection/>
-        <ServiciiSection/>
-        <TerapeutSection/>
-        <ProgramareSection/>
+    <div className="landing-page">
+      <HeroSection />
+      <BenefitsSection />
+      <MasajeSection />
+      <ServiciiSection />
+      <TerapeutSection />
+      <ProgramareSection />
     </div>
-  )
+  );
 }

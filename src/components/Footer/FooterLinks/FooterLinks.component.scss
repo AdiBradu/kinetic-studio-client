@@ -1,25 +1,25 @@
 @import '../../../styles/variables.module.scss';
-.footer-links{
-    width: 50%;
-    flex-grow: 0;
-    gap: $unit;
-    @media (min-width: $md) {
-        flex-grow: 1;
-        flex-basis: 0;
+.footer-links {
+  width: 50%;
+  flex-grow: 0;
+  gap: $unit;
+  @media (min-width: $md) {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  ul {
+    li {
+      margin-top: $unit;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+      &:first-child {
+        margin-top: 0px;
+      }
+      p {
+        text-transform: capitalize;
+      }
     }
-    ul{
-        li{
-            margin-top: $unit;
-            &:hover{
-                cursor: pointer;
-                opacity: 0.75;
-            }
-            &:first-child{
-                margin-top: 0px;
-            }
-            p{
-                text-transform: capitalize;
-            }
-        }
-    }
+  }
 }

@@ -1,4 +1,4 @@
-@import "../../styles/variables.module.scss";
+@import '../../styles/variables.module.scss';
 .input-atom {
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@
     font-size: 0.875rem;
     color: $textDark;
     border: 1px solid $border;
+    border-radius: calc(0.25 * #{$unit});
     &::placeholder {
       font-size: 0.875rem;
       color: $grayLight;

@@ -1,44 +1,45 @@
 @import '../../styles/variables.module.scss';
-img{
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    object-fit: cover;
+img {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
 }
-img.hero-image{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    filter: brightness(50%)
-}
-
-img.masaj-relaxare, img.masaj-terapeutic{
-    position: relative;
-    width: 100%;
-    height: 400px;
-    @media (min-width: $md) {
-        width: 50%;
-        height: 480px;
-    }
-    @media (min-width: $xxl) {
-        width: 50%;
-        height: 800px;
-    }
+img.hero-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: brightness(50%);
 }
 
-img.netopia{
-    position: relative;
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: auto;
+img.masaj-relaxare,
+img.masaj-terapeutic {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  @media (min-width: $md) {
+    width: 50%;
+    height: 480px;
+  }
+  @media (min-width: $xxl) {
+    width: 50%;
+    height: 800px;
+  }
 }
 
-img.card-image{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+img.netopia {
+  position: relative;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: auto;
+}
+
+img.card-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }

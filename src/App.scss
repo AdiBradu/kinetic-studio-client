@@ -1,12 +1,13 @@
-@import "../src//styles/reset.scss";
-@import "../src/styles/typography.scss";
-@import "../src/styles/layouts.scss";
-@import "../src/styles/colors.scss";
+@import '../src//styles/reset.scss';
+@import '../src/styles/typography.scss';
+@import '../src/styles/layouts.scss';
+@import '../src/styles/colors.scss';
 
-#root{
+#root {
   position: relative;
-  height: 100vh;
   width: 100%;
+  height: 100vh; /* fallback for Js load */
+  height: var(--doc-height);
 }
 
 .App {
@@ -17,14 +18,14 @@
   overflow-y: auto;
 }
 
-.padding{
+.padding {
   padding: $unit;
   @media (min-width: $xxl) {
     padding: calc(2 * #{$unit}) calc(4 * #{$unit});
   }
 }
 
-.container-fluid{
+.container-fluid {
   position: relative;
   width: 100%;
 }
@@ -42,45 +43,45 @@
   }
 }
 
-.row{
+.row {
   position: relative;
   width: 100%;
   display: flex;
 }
 
-.row-reverse{
+.row-reverse {
   flex-direction: row-reverse;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
 
-.flex-row{
+.flex-row {
   flex-direction: row;
 }
 
-.flex-column{
+.flex-column {
   flex-direction: column;
 }
 
-.align-center{
+.align-center {
   align-items: center;
 }
 
-.justify-center{
+.justify-center {
   justify-content: center;
 }
 
-.space-between{
+.space-between {
   justify-content: space-between;
 }
 
-.grid{
+.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
@@ -95,25 +96,25 @@
   }
 }
 
-.mx-auto{
+.mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-.my-auto{
+.my-auto {
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.m-auto{
+.m-auto {
   margin: auto;
 }
 
-.ml-auto{
+.ml-auto {
   margin-left: auto;
 }
 
-.mr-auto{
+.mr-auto {
   margin-right: auto;
 }
 
@@ -127,12 +128,19 @@
 }
 
 .select-atom {
+  position: relative;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 480px;
   margin-bottom: $unit;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  @media (min-width: $md) {
+    max-width: 400px;
+  }
+  @media (min-width: $xxl) {
+    max-width: 480px;
+  }
   p {
     font-size: 0.875rem;
     font-weight: 600;
@@ -155,45 +163,27 @@
     font-size: 0.875rem;
     text-transform: capitalize;
     border: 1px solid $border;
-    font-family: "Montserrat", sans-serif;
+    border-radius: calc(0.25 * #{$unit});
+    font-family: 'Montserrat', sans-serif;
     background-color: $primaryColorExtraLight;
     &::placeholder {
       font-size: 0.875rem;
     }
     &:focus {
-      outline: none;
-      box-shadow: inset 0 0 4px $primaryColor;
+      outline: 1px solid $primaryColor;
+    }
+    option {
+      width: 100%;
+      background-color: $primaryColorExtraLight;
+      padding: calc(0.5 * #{$unit});
+      font-size: 0.875rem;
+      color: $textDark;
+      text-transform: capitalize;
+      &:checked,
+      :focus {
+        background-color: $primaryColor;
+        color: $textLight;
+      }
     }
   }
-  option {
-    width: 100%;
-    background-color: $primaryColorExtraLight;
-    padding: calc(0.5 * #{$unit});
-    font-size: 0.875rem;
-    color: $textDark;
-    text-transform: capitalize;
-  }
-  button {
-    background-color: $primaryColor;
-    color: $textLight;
-    width: 100%;
-    padding: calc(0.5 * #{$unit});
-    border-radius: 4px;
-    margin-top: 4px;
-    @media (min-width: $md) {
-      background-color: transparent;
-      max-width: 60px;
-      margin-top: 0px;
-      color: $primaryColor;
-    }
-    &:hover {
-      opacity: 0.75;
-      cursor: pointer;
-    }
-  }
-}
-
-.table-select {
-  display: flex;
-  max-width: 480px;
 }

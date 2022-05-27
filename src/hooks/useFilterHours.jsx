@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const useFilterHours = (
   calendarTimeslotsForDate,
   programariTimeslotsForDate,
   startDate,
-  durataSedinta
+  durataSedinta,
 ) => {
   const [filteredHours, setFilteredHours] = useState();
   const options = [];

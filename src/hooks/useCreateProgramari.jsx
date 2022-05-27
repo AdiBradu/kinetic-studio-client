@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const useCreateProgramari = (startDate, terapeutId, timeSlotStart, sedinte) => {
   const [programari, setProgramari] = useState();
@@ -20,9 +20,9 @@ const useCreateProgramari = (startDate, terapeutId, timeSlotStart, sedinte) => {
       for (let i = 1; i < sedinte; i++) {
         const programare = {
           sedinta: i + 1,
-          terapeut: "TBD",
-          timeSlotStart: "TBD",
-          timeSlotEnd: "TBD",
+          terapeut: 'TBD',
+          timeSlotStart: 'TBD',
+          timeSlotEnd: 'TBD',
         };
         programari.push(programare);
       }

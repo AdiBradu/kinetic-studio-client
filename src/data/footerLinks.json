@@ -1,15 +1,14 @@
 [
-    {
-      "id": 1,
-      "link": "termene si conditii"
-    },
-    {
-      "id": 2,
-      "link": "politica cookies"
-    },
-    {
-      "id": 3,
-      "link": "plata online"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "link": "termene si conditii"
+  },
+  {
+    "id": 2,
+    "link": "politica cookies"
+  },
+  {
+    "id": 3,
+    "link": "plata online"
+  }
+]

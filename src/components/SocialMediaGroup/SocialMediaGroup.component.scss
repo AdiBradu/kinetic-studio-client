@@ -1,16 +1,17 @@
 @import '../../styles/variables.module.scss';
-.social-media-group{
+.social-media-group {
+  display: flex;
+  align-items: center;
+  gap: calc(1.5 * #{$unit});
+  display: none;
+  @media (min-width: $md) {
     display: flex;
-    align-items: center;
-    gap: calc(1.5 * #{$unit});
-    display: none;
-    @media (min-width: $md) {
-        display: flex;
+  }
+  svg {
+    transition: all 300ms;
+    :hover {
+      cursor: pointer;
+      opacity: 0.75;
     }
-    svg{
-        :hover{
-            cursor: pointer;
-            opacity: 0.75;
-        }
-    }
+  }
 }

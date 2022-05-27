@@ -1,5 +1,5 @@
-import React from "react";
-import "./Input.component.scss";
+import React from 'react';
+import './Input.component.scss';
 
 export default function Input({
   label,

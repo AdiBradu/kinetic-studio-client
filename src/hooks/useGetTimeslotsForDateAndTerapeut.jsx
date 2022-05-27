@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { timestampToDayAndMonth, dateToDayAndMonth } from "../utils.js";
+import { useState, useEffect } from 'react';
+import { timestampToDayAndMonth, dateToDayAndMonth } from '../utils.js';
 
 const useGetTimeslotsForDateAndTerapeut = (
   startDate,
   terapeutCalendar,
-  terapeutProgramari
+  terapeutProgramari,
 ) => {
   const [calendarTimeslotsForDate, setCalendarTimeslotsForDate] = useState({});
 
@@ -26,7 +26,7 @@ const useGetTimeslotsForDateAndTerapeut = (
   }, [startDate, terapeutCalendar]);
 
   const [programariTimeslotsForDate, setProgramariTimeslotsForDate] = useState(
-    {}
+    {},
   );
 
   useEffect(() => {

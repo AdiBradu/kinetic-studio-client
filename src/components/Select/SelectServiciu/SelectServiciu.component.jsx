@@ -1,5 +1,5 @@
-import React from "react";
-import "./SelectServiciu.component.scss";
+import React from 'react';
+import './SelectServiciu.component.scss';
 
 export default function SelectServiciu({
   options,
@@ -10,20 +10,21 @@ export default function SelectServiciu({
 }) {
   return (
     <>
-      <div className="select-atom">
-        <label>
-          <p>Alege serviciul</p>
-        </label>
-        <select name={name} onChange={handleChange} value={value}>
-          {<option disabled hidden></option>}
-          {options &&
-            options.map((option, index) => (
+      {options.length > 0 && (
+        <div className="select-atom">
+          <label>
+            <p>Alege serviciul</p>
+          </label>
+          <select name={name} onChange={handleChange} value={value}>
+            {<option disabled hidden></option>}
+            {options.map((option, index) => (
               <option key={index} value={option.denumire}>
                 {option.denumire}
               </option>
             ))}
-        </select>
-      </div>
+          </select>
+        </div>
+      )}
     </>
   );
 }

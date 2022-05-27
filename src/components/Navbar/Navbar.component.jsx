@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import './Navbar.component.scss';
 import Logo from '../Logo/Logo.component.jsx';
 import MenuToggler from '../MenuToggler/MenuToggler.component.jsx';
@@ -7,23 +7,23 @@ import { NavbarContext } from '../../contexts/NavbarContext';
 import { AppContext } from '../../contexts/AppContext';
 
 export default function Navbar() {
-  const {isTablet, isDesktop} = useContext(AppContext);
-  const {isMenuToggledObj} = useContext(NavbarContext);
+  const { isTablet, isDesktop } = useContext(AppContext);
+  const { isMenuToggledObj } = useContext(NavbarContext);
   const [isMenuToggled, setIsMenuToggled] = isMenuToggledObj;
 
   return (
-    <div className='navbar'>
-      <div className={isTablet ? "container-fluid flex mx-auto space-between padding" : "container flex mx-auto space-between padding"}>
-        <Logo/>
-        {
-          !isDesktop ? <MenuToggler/> : ''
+    <div className="navbar">
+      <div
+        className={
+          isTablet
+            ? 'container-fluid flex mx-auto space-between padding align-center'
+            : 'container flex mx-auto space-between padding align-center'
         }
-        {
-          isDesktop ? <Menu/> 
-          : isMenuToggled & !isDesktop ? <Menu/>
-          : ''
-        }
+      >
+        <Logo />
+        {!isDesktop ? <MenuToggler /> : ''}
+        {isDesktop ? <Menu /> : isMenuToggled & !isDesktop ? <Menu /> : ''}
       </div>
     </div>
-  )
+  );
 }

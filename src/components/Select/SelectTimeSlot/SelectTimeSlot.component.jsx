@@ -1,5 +1,5 @@
-import React from "react";
-import "./SelectTimeSlot.component.scss";
+import React from 'react';
+import './SelectTimeSlot.component.scss';
 
 export default function SelectTimeSlot({
   label,
@@ -7,7 +7,6 @@ export default function SelectTimeSlot({
   handleChange,
   options,
 }) {
-
   const convertToTime = (input) => {
     let hours = Math.floor(input / 60);
     let minutes = input % 60;

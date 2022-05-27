@@ -1,55 +1,52 @@
 @import '../../../styles/variables.module.scss';
-.card-serviciu{
+.card-serviciu {
+  position: relative;
+  display: inline-flex;
+  background-color: $primaryColorLight;
+  width: 80vw;
+  height: 176px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  scroll-snap-align: center;
+  flex: none;
+  margin-right: 16px;
+  @media (min-width: $md) {
+    max-width: 320px;
+    scroll-snap-align: none;
+  }
+  .card-serviciu-header {
     position: relative;
-    display: inline-flex;
-    background-color: $primaryColorLight;
-    width: 80vw;
-    height: 176px;
-    border: 1px solid $border;
-    border-radius: 8px;
-    scroll-snap-align: center;
-    flex: none;
-    margin-right: 16px;
-    &:hover{
-        cursor: grab;
+    width: 40%;
+    display: flex;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 700;
+    p {
+      color: $textLight;
+      z-index: 1;
+      margin: auto;
+      max-width: 10ch;
     }
-    @media (min-width: $md) {
-        max-width: 320px;
-        scroll-snap-align: none;
+  }
+  .card-serviciu-body {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: $unit;
+    justify-content: center;
+    gap: calc(0.75 * #{$unit});
+    .btn-wrapper {
+      width: 100%;
     }
-    .card-serviciu-header{
-        position: relative;
-        width: 40%;
-        display: flex;
-        text-align: center;
+    .card-serviciu-body-line {
+      display: flex;
+      gap: calc(0.5 * #{$unit});
+      p {
         text-transform: capitalize;
-        font-weight: 700;
-        p{
-            color: $textLight;
-            z-index: 1;
-            margin: auto;
-            max-width: 10ch;
+        &:first-child {
+          font-weight: 600;
         }
+      }
     }
-    .card-serviciu-body{
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        padding: $unit;
-        justify-content: center;
-        gap: calc(0.75 * #{$unit});
-        .btn-wrapper{
-            width: 100%;
-        }
-        .card-serviciu-body-line{
-            display: flex;
-            gap: calc(0.5 * #{$unit});
-            p{
-                text-transform: capitalize;
-                &:first-child{
-                    font-weight: 600;
-                }
-            }
-        }
-    }
+  }
 }
