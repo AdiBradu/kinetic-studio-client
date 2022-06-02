@@ -10,18 +10,22 @@
     "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
     "calendar": [
       {
-        "timeSlotStart": 1651816800000,
-        "timeSlotEnd": 1651845600000
+        "timeSlotStart": 1654236000000,
+        "timeSlotEnd": 1654264800000
       },
       {
-        "timeSlotStart": 1653717600000,
-        "timeSlotEnd": 1653746400000
+        "timeSlotStart": 1654322400000,
+        "timeSlotEnd": 1654351200000
+      },
+      {
+        "timeSlotStart": 1654495200000,
+        "timeSlotEnd": 1654524000000
       }
     ],
     "programari": [
       {
-        "timeSlotStart": 1651910400000,
-        "timeSlotEnd": 1651917600000
+        "timeSlotStart": 1654333200000,
+        "timeSlotEnd": 1654338600000
       }
     ]
   },
@@ -36,38 +40,22 @@
     "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
     "calendar": [
       {
-        "timeSlotStart": 1652857200000,
-        "timeSlotEnd": 1652882400000
+        "timeSlotStart": 1654236000000,
+        "timeSlotEnd": 1654264800000
       },
       {
-        "timeSlotStart": 1652943600000,
-        "timeSlotEnd": 1651932000000
+        "timeSlotStart": 1654322400000,
+        "timeSlotEnd": 1654351200000
       },
       {
-        "timeSlotStart": 1652943600000,
-        "timeSlotEnd": 1653055200000
-      },
-      {
-        "timeSlotStart": 1653030000000,
-        "timeSlotEnd": 1652191200000
-      },
-      {
-        "timeSlotStart": 1653116400000,
-        "timeSlotEnd": 1653141600000
-      },
-      {
-        "timeSlotStart": 1654063200000,
-        "timeSlotEnd": 1654092000000
+        "timeSlotStart": 1654495200000,
+        "timeSlotEnd": 1654524000000
       }
     ],
     "programari": [
       {
-        "timeSlotStart": 1651910400000,
-        "timeSlotEnd": 1651917600000
-      },
-      {
-        "timeSlotStart": 1652256000000,
-        "timeSlotEnd": 1652265000000
+        "timeSlotStart": 1654333200000,
+        "timeSlotEnd": 1654338600000
       }
     ]
   },
@@ -82,22 +70,22 @@
     "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
     "calendar": [
       {
-        "timeSlotStart": 1651575600000,
-        "timeSlotEnd": 1651597200000
+        "timeSlotStart": 1654236000000,
+        "timeSlotEnd": 1654264800000
       },
       {
-        "timeSlotStart": 1651644000000,
-        "timeSlotEnd": 1651672800000
+        "timeSlotStart": 1654322400000,
+        "timeSlotEnd": 1654351200000
       },
       {
-        "timeSlotStart": 1651755600000,
-        "timeSlotEnd": 1651780800000
+        "timeSlotStart": 1654495200000,
+        "timeSlotEnd": 1654524000000
       }
     ],
     "programari": [
       {
-        "timeSlotStart": 1651762800000,
-        "timeSlotEnd": 1651770000000
+        "timeSlotStart": 1654333200000,
+        "timeSlotEnd": 1654338600000
       }
     ]
   },
@@ -112,18 +100,22 @@
     "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
     "calendar": [
       {
-        "timeSlotStart": 1651816800000,
-        "timeSlotEnd": 1651845600000
+        "timeSlotStart": 1654236000000,
+        "timeSlotEnd": 1654264800000
       },
       {
-        "timeSlotStart": 1651903200000,
-        "timeSlotEnd": 1651932000000
+        "timeSlotStart": 1654322400000,
+        "timeSlotEnd": 1654351200000
+      },
+      {
+        "timeSlotStart": 1654495200000,
+        "timeSlotEnd": 1654524000000
       }
     ],
     "programari": [
       {
-        "timeSlotStart": 1651910400000,
-        "timeSlotEnd": 1651917600000
+        "timeSlotStart": 1654333200000,
+        "timeSlotEnd": 1654338600000
       }
     ]
   }

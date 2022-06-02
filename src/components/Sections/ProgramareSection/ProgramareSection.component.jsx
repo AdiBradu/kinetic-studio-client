@@ -65,7 +65,7 @@ export default function ProgramareSection() {
     if (startProgramare) {
       setIsLoading(true);
       axios
-        .get('http://localhost:3000/data/servicii.json')
+        .get('/data/servicii.json')
         .then((res) => {
           if (res.data.length > 0) {
             setHasData(true);
@@ -80,7 +80,7 @@ export default function ProgramareSection() {
         });
 
       axios
-        .get('http://localhost:3000/data/terapeuti.json')
+        .get('/data/terapeuti.json')
         .then((res) => setTerapeuti(res.data))
         .catch((err) => console.log(err));
       setIsLoading(false);
