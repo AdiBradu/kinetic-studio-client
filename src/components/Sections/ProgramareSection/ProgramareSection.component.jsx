@@ -299,7 +299,7 @@ export default function ProgramareSection() {
                 handleChange={handleChange}
                 name="telefon"
                 label={'telefon'}
-                type={'text'}
+                type={'number'}
                 placeholder={'type'}
               />
             )}
@@ -365,7 +365,7 @@ export default function ProgramareSection() {
                 onClick={() => handleProgramare()}
               >
                 <ButtonProgramare
-                  text={'programeaza-te!'}
+                  text={'continua spre plata'}
                   classe={'btn-programare-client'}
                 />
               </div>

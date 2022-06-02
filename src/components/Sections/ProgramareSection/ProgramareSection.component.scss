@@ -104,9 +104,9 @@
               .active-calendar {
                 color: $textDark;
               }
-              .active-programare {
-                color: $primaryColor;
-              }
+              // .active-programare {
+              //   color: $primaryColor;
+              // }
               .innactive {
                 color: $grayLight;
                 pointer-events: none;
@@ -118,6 +118,12 @@
                 background-color: $primaryColor;
                 color: $textLight;
               }
+              .react-datepicker__day--today{
+                border: 1px solid $border;
+                background-color: $primaryColorLight;
+                color: $textLight;
+                border-radius: 50%;
+              }
             }
           }
         }
@@ -126,6 +132,14 @@
             background-color: $primaryColor;
             color: $textLight;
           }
+        }
+        .react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected{
+          border-radius: 50%;
+        }
+        .react-datepicker__day--selected{
+          background-color: $primaryColor;
+          color: $textLight;
+          border-radius: 50%;
         }
       }
     }

@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+.env
+.gitignore
+package-lock.json
+.prettierrc
+
 
 # testing
 /coverage

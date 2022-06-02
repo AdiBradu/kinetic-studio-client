@@ -1,3 +1,9 @@
+export const checkIfActiveElement = (e) => {
+  if (document.activeElement === e.current) {
+    e.current.scrollIntoView({behavior: "smooth", block: "start"});
+  }
+}
+
 export const documentHeight = () => {
   const doc = document.documentElement;
   doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
