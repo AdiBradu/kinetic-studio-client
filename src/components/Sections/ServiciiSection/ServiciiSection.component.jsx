@@ -35,6 +35,7 @@ export default function ServiciiSection() {
               key={index}
               nume={serviciu.denumire}
               image={serviciu.image}
+              imageAlt={serviciu.denumire}
               tarif={serviciu.tarif}
               sedinte={serviciu.sedinte}
               durata={serviciu.durata}

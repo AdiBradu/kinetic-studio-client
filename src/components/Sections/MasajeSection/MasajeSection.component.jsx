@@ -13,7 +13,8 @@ export default function MasajeSection() {
       <div className={isTablet ? 'row flex-row' : 'row flex-column'}>
         <ImagePlaceholder
           key={'relaxare'}
-          image="https://kineticstudio.ro/images/masajRelaxare.webp"
+          image={"https://kineticstudio.ro/images/masajRelaxare.webp"}
+          imageAlt={'masajRelaxare'}
           classe={'masaj-relaxare'}
         />
         <div className="masaj-body container">
@@ -32,7 +33,8 @@ export default function MasajeSection() {
       <div className={isTablet ? 'row row-reverse' : 'row flex-column'}>
         <ImagePlaceholder
           key={'terapeutic'}
-          image="https://kineticstudio.ro/images/masajTerapeutic.webp"
+          image={"https://kineticstudio.ro/images/masajTerapeutic.webp"}
+          imageAlt={'masajTerapeutic'}
           classe={'masaj-terapeutic'}
         />
         <div className="masaj-body container">

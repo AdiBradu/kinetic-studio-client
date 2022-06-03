@@ -25,8 +25,7 @@ export default function Footer() {
           <p className="navlink">follow us</p>
           <SocialMediaGroup color={variables.textDark} />
         </div>
-        {/* <img src={Netopia} alt="netopia" className="netopia flex"/> */}
-        <ImagePlaceholder image={Netopia} classe={'netopia flex'} />
+        <ImagePlaceholder image={Netopia} imageAlt={'Netopia'} classe={'netopia flex'} />
         <div className="footer-logo flex">
           <FooterLogo />
         </div>

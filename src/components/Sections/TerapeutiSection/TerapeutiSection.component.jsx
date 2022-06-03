@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import './TerapeutiSection.component.scss';
 import IntroSection from '../IntroSection/IntroSection.component.jsx';
 import CardTerapeut from '../../Cards/CardTerapeut/CardTerapeut.component.jsx';
-// import terapeuti from '../../../data/terapeuti.json';
 import { AppContext } from '../../../contexts/AppContext';
 import { scrollSlider } from '../../../utils.js';
 import axios from 'axios';

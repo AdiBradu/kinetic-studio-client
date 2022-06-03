@@ -1,7 +1,6 @@
 import React from 'react';
 import './HeroSection.component.scss';
 import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component';
-import ImageHero from '../../../assets/images/heroImage.jpg';
 import Button from '../../Button/Button.component';
 import BottomInfo from './BottomInfo/BottomInfo.component';
 import { scrollToTarget } from '../../../utils.js';
@@ -9,7 +8,7 @@ import { scrollToTarget } from '../../../utils.js';
 export default function HeroSection() {
   return (
     <section className="hero-section">
-      <ImagePlaceholder image="https://kineticstudio.ro/images/heroImage.webp" classe={'hero-image'} />
+      <ImagePlaceholder image={"https://kineticstudio.ro/images/heroImage.webp"} imageAlt={'Kinetic Studio'} classe={'hero-image'} />
       <div className="hero-body">
         <div className="hero-body-message">
           <h1 className="display3">

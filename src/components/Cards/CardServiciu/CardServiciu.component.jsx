@@ -8,6 +8,7 @@ import { scrollToTarget } from '../../../utils.js';
 export default function CardServiciu({
   nume,
   image,
+  imageAlt,
   tarif,
   sedinte,
   durata,
@@ -25,7 +26,7 @@ export default function CardServiciu({
     <div className="card-serviciu">
       <div className="card-serviciu-header">
         <p className="card">{nume}</p>
-        <ImagePlaceholder image={image} classe={'card-image'} />
+        <ImagePlaceholder image={image} imageAlt={imageAlt} classe={'card-image'} />
       </div>
       <div className="card-serviciu-body">
         <div className="card-serviciu-body-data">
