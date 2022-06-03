@@ -2,11 +2,11 @@ import React from 'react';
 import './CardTerapeut.component.scss';
 import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component.jsx';
 
-export default function CardTerapeut({ image, nume, specializare, descriere }) {
+export default function CardTerapeut({ image, imageAlt, nume, specializare, descriere }) {
   return (
     <div className="card-terapeut">
       <div className="card-terapeut-header">
-        <ImagePlaceholder image={image} classe={'card-image'} />
+        <ImagePlaceholder image={image} imageAlt={imageAlt} classe={'card-image'} />
       </div>
       <div className="card-terapeut-body">
         <div className="card-terapeut-body-data">

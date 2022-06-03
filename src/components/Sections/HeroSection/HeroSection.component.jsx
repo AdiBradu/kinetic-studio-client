@@ -9,7 +9,7 @@ import { scrollToTarget } from '../../../utils.js';
 export default function HeroSection() {
   return (
     <section className="hero-section">
-      <ImagePlaceholder image={ImageHero} classe={'hero-image'} />
+      <ImagePlaceholder image="https://kineticstudio.ro/images/heroImage.webp" classe={'hero-image'} />
       <div className="hero-body">
         <div className="hero-body-message">
           <h1 className="display3">

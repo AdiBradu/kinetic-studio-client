@@ -1,16 +1,31 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './TerapeutiSection.component.scss';
 import IntroSection from '../IntroSection/IntroSection.component.jsx';
 import CardTerapeut from '../../Cards/CardTerapeut/CardTerapeut.component.jsx';
-import terapeuti from '../../../data/terapeuti.json';
+// import terapeuti from '../../../data/terapeuti.json';
 import { AppContext } from '../../../contexts/AppContext';
 import { scrollSlider } from '../../../utils.js';
+import axios from 'axios';
 
 export default function TerapeutiSection() {
   const { isTablet } = useContext(AppContext);
+  const [terapeuti, setTerapeuti] = useState([]);
 
   useEffect(() => {
     scrollSlider('.slider-terapeuti-group');
+  }, []);
+
+  useEffect(() => {
+    axios
+    .get('/data/terapeuti.json')
+    .then((res) => {
+      if (res.data.length > 0) {
+        setTerapeuti(res.data);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }, []);
 
   return (
@@ -35,6 +50,7 @@ export default function TerapeutiSection() {
               key={index}
               nume={`${terapeut.prenume} ${terapeut.nume}`}
               image={terapeut.thumbnail}
+              imageAlt={`terapeut ${index}`}
               specializare={terapeut.specializare}
               descriere={terapeut.descriere}
             />
