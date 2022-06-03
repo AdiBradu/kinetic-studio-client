@@ -4,8 +4,10 @@ import { scrollToTarget } from '../../utils.js';
 import { NavbarContext } from '../../contexts/NavbarContext.js';
 import { motion } from 'framer-motion';
 import useFadeInChildren from '../../hooks/useFadeInChildren';
+import { AppContext } from '../../contexts/AppContext';
 
 export default function Navlink({ navlink, inView, custom }) {
+  const {isDesktop} = useContext(AppContext)
   const [target, setTarget] = useState('');
   const { isMenuToggledObj } = useContext(NavbarContext);
   const [isMenuToggled, setIsMenuToggled] = isMenuToggledObj;
