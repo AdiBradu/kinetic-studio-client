@@ -15,6 +15,7 @@
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       padding-left: 16px;
+      scroll-behavior: smooth;
       &:hover {
         cursor: grab;
       }
