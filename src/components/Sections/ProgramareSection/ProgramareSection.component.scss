@@ -1,6 +1,7 @@
 @import '../../../styles/variables.module.scss';
 .programare-section {
   margin-top: calc(6 * #{$unit});
+  margin-bottom: calc(6 * #{$unit});
   padding: $unit;
   display: flex;
   flex-direction: column;
@@ -118,7 +119,7 @@
                 background-color: $primaryColor;
                 color: $textLight;
               }
-              .react-datepicker__day--today{
+              .react-datepicker__day--today {
                 border: 1px solid $border;
                 background-color: $primaryColorLight;
                 color: $textLight;
@@ -133,10 +134,13 @@
             color: $textLight;
           }
         }
-        .react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected{
+        .react-datepicker__day--keyboard-selected,
+        .react-datepicker__month-text--keyboard-selected,
+        .react-datepicker__quarter-text--keyboard-selected,
+        .react-datepicker__year-text--keyboard-selected {
           border-radius: 50%;
         }
-        .react-datepicker__day--selected{
+        .react-datepicker__day--selected {
           background-color: $primaryColor;
           color: $textLight;
           border-radius: 50%;

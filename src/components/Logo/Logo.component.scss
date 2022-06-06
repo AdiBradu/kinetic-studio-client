@@ -2,4 +2,6 @@
 svg.logo-navbar {
   width: calc(8 * #{$unit});
   height: auto;
+  position: relative;
+  z-index: 102;
 }

@@ -1,0 +1,20 @@
+@import '../../styles/variables.module.scss';
+.four-o-four-page {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $textDark;
+  gap: 1rem;
+  h1 {
+    color: $textLight;
+  }
+  p {
+    color: $textLight;
+    max-width: 24ch;
+    text-align: center;
+  }
+}

@@ -4,21 +4,21 @@ import { AppContext } from '../contexts/AppContext';
 
 const useFadeInChildren = (inView, custom) => {
   const fadeInChildren = useAnimation();
-  const {isDesktop} = useContext(AppContext);
+  const { isDesktop } = useContext(AppContext);
 
   useEffect(() => {
-    if(inView & !isDesktop) {
+    if (inView & !isDesktop) {
       fadeInChildren.start({
         opacity: 1,
         y: 0,
         transition: { delay: custom * 0.25 },
-      })
+      });
     }
-    if(!inView & !isDesktop) {
-      fadeInChildren.start({ opacity: 0, y: 50 });
+    if (!inView & !isDesktop) {
+      fadeInChildren.set({ opacity: 0, y: 50 });
     }
-    if(isDesktop) {
-      fadeInChildren.set({ opacity: 1, y: 0 })
+    if (isDesktop) {
+      fadeInChildren.set({ opacity: 1, y: 0 });
     }
   }, [inView, fadeInChildren]);
 

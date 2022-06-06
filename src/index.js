@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -14,14 +15,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <AppProvider>
-        <App />
-      </AppProvider>
-    </ApolloProvider>
+    <Router>
+      <ApolloProvider client={client}>
+        <AppProvider>
+          <App />
+        </AppProvider>
+      </ApolloProvider>
+    </Router>
   </React.StrictMode>,
 );
 
