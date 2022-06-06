@@ -17,15 +17,17 @@
     :last-child {
       margin-bottom: 0px;
     }
-    li {
-      margin-bottom: $unit;
-      P {
-        color: $textLight;
-        text-align: right;
-      }
-      :hover {
-        cursor: pointer;
-        opacity: 0.75;
+    a {
+      li {
+        padding-bottom: $unit;
+        P {
+          color: $textLight;
+          text-align: right;
+        }
+        :hover {
+          cursor: pointer;
+          opacity: 0.75;
+        }
       }
     }
   }
@@ -37,12 +39,15 @@
     ul {
       display: flex;
       justify-content: flex-end;
-      li {
+      a {
         margin-bottom: auto;
         margin-top: auto;
         margin-left: calc(2 * #{$unit});
-        p {
-          font-size: calc(0.8125 * #{$unit});
+        li {
+          padding-bottom: 0px;
+          p {
+            font-size: calc(0.8125 * #{$unit});
+          }
         }
       }
     }

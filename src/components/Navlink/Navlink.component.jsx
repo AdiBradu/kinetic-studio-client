@@ -4,10 +4,9 @@ import { scrollToTarget } from '../../utils.js';
 import { NavbarContext } from '../../contexts/NavbarContext.js';
 import { motion } from 'framer-motion';
 import useFadeInChildren from '../../hooks/useFadeInChildren';
-import { AppContext } from '../../contexts/AppContext';
+import { Link } from 'react-router-dom';
 
 export default function Navlink({ navlink, inView, custom }) {
-  const {isDesktop} = useContext(AppContext)
   const [target, setTarget] = useState('');
   const { isMenuToggledObj } = useContext(NavbarContext);
   const [isMenuToggled, setIsMenuToggled] = isMenuToggledObj;
@@ -30,7 +29,9 @@ export default function Navlink({ navlink, inView, custom }) {
 
   const handleNavlinkClick = () => {
     setIsMenuToggled(!isMenuToggled);
-    scrollToTarget(target);
+    setTimeout(() => {
+      scrollToTarget(target);
+    }, 500);
   };
 
   useEffect(() => {
@@ -39,13 +40,15 @@ export default function Navlink({ navlink, inView, custom }) {
   }, [navlink]);
 
   return (
-    <motion.li
-      className="navlink"
-      onClick={() => handleNavlinkClick()}
-      animate={fadeInChildren}
-      custom={custom}
-    >
-      <p>{navlink}</p>
-    </motion.li>
+    <Link to={`/`}>
+      <motion.li
+        className="navlink"
+        onClick={() => handleNavlinkClick()}
+        animate={fadeInChildren}
+        custom={custom}
+      >
+        <p>{navlink}</p>
+      </motion.li>
+    </Link>
   );
 }

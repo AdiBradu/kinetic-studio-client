@@ -10,6 +10,8 @@
   scroll-snap-align: center;
   flex: none;
   margin-right: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   @media (min-width: $md) {
     max-width: 320px;
     scroll-snap-align: none;

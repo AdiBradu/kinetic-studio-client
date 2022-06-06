@@ -5,11 +5,16 @@ import MenuToggler from '../MenuToggler/MenuToggler.component.jsx';
 import Menu from '../Menu/Menu.component.jsx';
 import { NavbarContext } from '../../contexts/NavbarContext';
 import { AppContext } from '../../contexts/AppContext';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const { isTablet, isDesktop } = useContext(AppContext);
   const { isMenuToggledObj } = useContext(NavbarContext);
   const [isMenuToggled, setIsMenuToggled] = isMenuToggledObj;
+
+  const handleNavlinkClick = () => {
+    setIsMenuToggled(!isMenuToggled);
+  };
 
   return (
     <div className="navbar">
@@ -20,7 +25,9 @@ export default function Navbar() {
             : 'container flex mx-auto space-between padding align-center'
         }
       >
-        <Logo />
+        <Link to={'/'} onClick={() => handleNavlinkClick()}>
+          <Logo />
+        </Link>
         {!isDesktop ? <MenuToggler /> : ''}
         {isDesktop ? <Menu /> : isMenuToggled & !isDesktop ? <Menu /> : ''}
       </div>

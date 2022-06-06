@@ -7,7 +7,7 @@
     "telefon": "0745898663",
     "email": "nume@gmail.com",
     "specializare": ["terapeutic"],
-    "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
+    "descriere": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus est facilisi diam purus malesuada ultricies.",
     "calendar": [
       {
         "timeSlotStart": 1654236000000,

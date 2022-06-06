@@ -7,6 +7,7 @@ import { AppContext } from '../../contexts/AppContext';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useFadeInFromRight from '../../hooks/useFadeInFromRight';
+import { scrollToTarget } from '../../utils.js';
 
 export default function Menu() {
   const { isDesktop } = useContext(AppContext);
@@ -25,7 +26,13 @@ export default function Menu() {
           />
         ))}
       </ul>
-      {isDesktop ? <Button classe={'programare'} text={'programare'} /> : ''}
+      {isDesktop ? (
+        <div onClick={() => scrollToTarget('.programare-section')}>
+          <Button classe={'programare'} text={'programare'} />
+        </div>
+      ) : (
+        ''
+      )}
     </motion.div>
   );
 }
