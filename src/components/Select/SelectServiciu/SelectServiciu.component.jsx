@@ -11,8 +11,7 @@ export default function SelectServiciu({
 }) {
 
   const inputRef = useRef(null);
-  checkIfActiveElement(inputRef);
-  
+  checkIfActiveElement(inputRef);  
   return (
     <>
       {options.length > 0 && (
@@ -23,7 +22,7 @@ export default function SelectServiciu({
           <select name={name} onChange={handleChange} value={value} ref={inputRef}>
             {<option disabled hidden></option>}
             {options.map((option, index) => (
-              <option key={index} value={option.denumire}>
+              <option key={index} value={option.id}>
                 {option.denumire}
               </option>
             ))}

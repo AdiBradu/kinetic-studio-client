@@ -16,10 +16,12 @@ import useGetTimeslotsForDateAndTerapeut from '../../../hooks/useGetTimeslotsFor
 import useFilterHours from '../../../hooks/useFilterHours.jsx';
 import useCreateComanda from '../../../hooks/useCreateComanda.jsx';
 import useCreateProgramari from '../../../hooks/useCreateProgramari.jsx';
-import { checkIfCalendar, checkIfProgramari } from '../../../utils.js';
+import { checkIfCalendar, checkIfProgramari, processPartners, processServices } from '../../../utils.js';
 import axios from 'axios';
 import Spinner from '../../Spinner/Spinner.component.jsx';
 import ErrorScreen from '../../ErrorScreen/ErrorScreen.component.jsx';
+import { useQuery } from "@apollo/client";
+import { GET_ALL_PARTNERS, GET_ALL_SERVICES } from '../../../graphql/queries';
 
 export default function ProgramareSection() {
   const { isTablet } = useContext(AppContext);
@@ -53,7 +55,7 @@ export default function ProgramareSection() {
     localitate: '',
     strada: '',
     nr: '',
-    serviciu: '',
+    serviciu: 0,
     sedinte: '',
     specializare: '',
     programari: [],
@@ -61,7 +63,7 @@ export default function ProgramareSection() {
 
   // console.log(comanda);
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (startProgramare) {
       setIsLoading(true);
       axios
@@ -85,6 +87,37 @@ export default function ProgramareSection() {
         .catch((err) => console.log(err));
       setIsLoading(false);
     }
+  }, [startProgramare]); */
+
+  const sQObj = useQuery(GET_ALL_SERVICES);  
+  const sQData = sQObj?.data ? sQObj.data['getAllServices'] : [];
+  const pQObj = useQuery(GET_ALL_PARTNERS);  
+  const pQData = pQObj?.data ? pQObj.data['getAllPartners'] : [];
+  
+  useEffect(() => {   
+    if (startProgramare) {
+      setIsLoading(true);
+      if(sQData) {
+        const pSData  = processServices(sQData);    
+        if(pSData.length){
+          setHasData(true);
+          setServicii(pSData);       
+          setServiciu(pSData[0].id); 
+        } else {
+          setHasData(false);
+          setServicii([]);
+        }
+      }
+      if(pQData) {
+        const pPData  = processPartners(pQData);    
+        if(pPData.length){
+          setTerapeuti(pPData);        
+        } else {
+          setTerapeuti([]);
+        }
+      }
+      setIsLoading(false);
+    }
   }, [startProgramare]);
 
   const { specializare, sedinte, durataSedinta } = useSetServiciuContext(
@@ -96,7 +129,7 @@ export default function ProgramareSection() {
     if (terapeutId) {
       for (let i = 0; i < terapeuti.length; i++) {
         if (terapeuti[i].id == terapeutId) {
-          setTerapeut(terapeuti[i]);
+          setTerapeut(terapeuti[i].id);
         }
       }
     }
@@ -166,7 +199,7 @@ export default function ProgramareSection() {
         localitate: '',
         strada: '',
         nr: '',
-        serviciu: '',
+        serviciu: 0,
         sedinte: '',
         specializare: '',
         programari: [],

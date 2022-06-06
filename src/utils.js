@@ -175,3 +175,55 @@ export const scrollToTarget = (target) => {
     behavior: 'smooth',
   });
 };
+
+export const processServices = ( data ) => {
+  const dataP = []   
+  if (data && data.length) {
+    data.forEach((el) => {
+      const objZone = {
+        id: el.s_id,
+        denumire: el.service_name,
+        specializare: el.mt_name, 
+        sedinte: el.appointments_number,
+        durata: el.appointment_duration,
+        tarif: el.service_cost,         
+      };
+      dataP.push(objZone);
+    });
+  }
+  return dataP;
+}
+
+
+export const processPartners = ( data ) => {
+  const dataP = []   
+  if (data && data.length) {
+    data.forEach((el) => {
+      const objTerapeuti = {
+        id: el.p_id,
+        thumbnail: el.profile_picture_url,
+        nume: el.last_name,
+        prenume: el.first_name,
+        specializare: el.m_types,
+        descriere: el.description,         
+      };
+      dataP.push(objTerapeuti);
+    });
+  }
+  return dataP;
+}
+
+export const processPartnerSched = ( data ) => {
+  const dataP = []   
+  if (data && data.length) {
+    data.forEach((el) => {
+      const objTerapeutiSched = {
+        timeSlotStart: el.schedule_start,
+        timeSlotEnd: el.schedule_end,
+      
+      };
+      dataP.push(objTerapeutiSched);
+    });
+  }
+  return dataP;
+}

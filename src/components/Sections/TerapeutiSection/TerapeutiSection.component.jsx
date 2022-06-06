@@ -3,8 +3,10 @@ import './TerapeutiSection.component.scss';
 import IntroSection from '../IntroSection/IntroSection.component.jsx';
 import CardTerapeut from '../../Cards/CardTerapeut/CardTerapeut.component.jsx';
 import { AppContext } from '../../../contexts/AppContext';
-import { scrollSlider } from '../../../utils.js';
-import axios from 'axios';
+import { processPartners, scrollSlider } from '../../../utils.js';
+import { useQuery } from "@apollo/client";
+import { GET_ALL_PARTNERS } from '../../../graphql/queries';
+
 
 export default function TerapeutiSection() {
   const { isTablet } = useContext(AppContext);
@@ -14,18 +16,19 @@ export default function TerapeutiSection() {
     scrollSlider('.slider-terapeuti-group');
   }, []);
 
-  useEffect(() => {
-    axios
-    .get('/data/terapeuti.json')
-    .then((res) => {
-      if (res.data.length > 0) {
-        setTerapeuti(res.data);
+  const currentQObj = useQuery(GET_ALL_PARTNERS);  
+  const queryData = currentQObj?.data ? currentQObj.data['getAllPartners'] : [];
+  
+  useEffect(() => {   
+    if(queryData) {
+      const processedData  = processPartners(queryData);    
+      if(processedData.length){
+        setTerapeuti(processedData);        
+      } else {
+        setTerapeuti([]);
       }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }, []);
+    }
+  }, [queryData])
 
   return (
     <div

@@ -8,7 +8,7 @@ const useSetServiciuContext = (servicii, serviciu) => {
   useEffect(() => {
     if (servicii) {
       servicii.forEach((el) => {
-        if (serviciu === el.denumire) {
+        if (parseInt(serviciu) === el.id) {
           setSedinte(el.sedinte);
           setSpecializare(el.specializare);
           setDurataSedinta((el.durata + 60) * 60000); //milliseconds
