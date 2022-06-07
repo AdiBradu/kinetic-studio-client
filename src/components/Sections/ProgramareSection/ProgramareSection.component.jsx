@@ -74,29 +74,22 @@ export default function ProgramareSection() {
 
   useEffect(() => {
     if (startProgramare) {
-      setIsLoading(true);
       if (sQData) {
         const pSData = processServices(sQData);
         if (pSData.length) {
           setHasData(true);
           setServicii(pSData);
           setServiciu(pSData[0].id);
-        } else {
-          setHasData(false);
-          setServicii([]);
         }
       }
       if (pQData) {
         const pPData = processPartners(pQData);
         if (pPData.length) {
           setTerapeuti(pPData);
-        } else {
-          setTerapeuti([]);
         }
       }
-      setIsLoading(false);
     }
-  }, [startProgramare, sQData, pQData]);
+  }, [sQData, pQData]);
 
   const { specializare, sedinte, durataSedinta } = useSetServiciuContext(
     servicii,
