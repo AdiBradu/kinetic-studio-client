@@ -16,11 +16,16 @@ import useGetTimeslotsForDateAndTerapeut from '../../../hooks/useGetTimeslotsFor
 import useFilterHours from '../../../hooks/useFilterHours.jsx';
 import useCreateComanda from '../../../hooks/useCreateComanda.jsx';
 import useCreateProgramari from '../../../hooks/useCreateProgramari.jsx';
-import { checkIfCalendar, checkIfProgramari, processPartners, processServices } from '../../../utils.js';
+import {
+  checkIfCalendar,
+  checkIfProgramari,
+  processPartners,
+  processServices,
+} from '../../../utils.js';
 import axios from 'axios';
 import Spinner from '../../Spinner/Spinner.component.jsx';
 import ErrorScreen from '../../ErrorScreen/ErrorScreen.component.jsx';
-import { useQuery } from "@apollo/client";
+import { useQuery } from '@apollo/client';
 import { GET_ALL_PARTNERS, GET_ALL_SERVICES } from '../../../graphql/queries';
 
 export default function ProgramareSection() {
@@ -89,36 +94,38 @@ export default function ProgramareSection() {
     }
   }, [startProgramare]); */
 
-  const sQObj = useQuery(GET_ALL_SERVICES);  
+  const sQObj = useQuery(GET_ALL_SERVICES);
   const sQData = sQObj?.data ? sQObj.data['getAllServices'] : [];
-  const pQObj = useQuery(GET_ALL_PARTNERS);  
+  const pQObj = useQuery(GET_ALL_PARTNERS);
   const pQData = pQObj?.data ? pQObj.data['getAllPartners'] : [];
-  
-  useEffect(() => {   
-    if (startProgramare) {
-      setIsLoading(true);
-      if(sQData) {
-        const pSData  = processServices(sQData);    
-        if(pSData.length){
-          setHasData(true);
-          setServicii(pSData);       
-          setServiciu(pSData[0].id); 
-        } else {
-          setHasData(false);
-          setServicii([]);
-        }
-      }
-      if(pQData) {
-        const pPData  = processPartners(pQData);    
-        if(pPData.length){
-          setTerapeuti(pPData);        
-        } else {
-          setTerapeuti([]);
-        }
-      }
-      setIsLoading(false);
-    }
-  }, [startProgramare]);
+
+  console.log(sQData);
+
+  // useEffect(() => {
+  //   if (startProgramare) {
+  //     setIsLoading(true);
+  //     if (sQData) {
+  //       const pSData = processServices(sQData);
+  //       if (pSData.length) {
+  //         setHasData(true);
+  //         setServicii(pSData);
+  //         setServiciu(pSData[0].id);
+  //       } else {
+  //         setHasData(false);
+  //         setServicii([]);
+  //       }
+  //     }
+  //     if (pQData) {
+  //       const pPData = processPartners(pQData);
+  //       if (pPData.length) {
+  //         setTerapeuti(pPData);
+  //       } else {
+  //         setTerapeuti([]);
+  //       }
+  //     }
+  //     setIsLoading(false);
+  //   }
+  // }, [startProgramare]);
 
   const { specializare, sedinte, durataSedinta } = useSetServiciuContext(
     servicii,

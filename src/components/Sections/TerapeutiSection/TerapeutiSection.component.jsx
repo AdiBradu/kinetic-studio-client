@@ -4,9 +4,8 @@ import IntroSection from '../IntroSection/IntroSection.component.jsx';
 import CardTerapeut from '../../Cards/CardTerapeut/CardTerapeut.component.jsx';
 import { AppContext } from '../../../contexts/AppContext';
 import { processPartners, scrollSlider } from '../../../utils.js';
-import { useQuery } from "@apollo/client";
+import { useQuery } from '@apollo/client';
 import { GET_ALL_PARTNERS } from '../../../graphql/queries';
-
 
 export default function TerapeutiSection() {
   const { isTablet } = useContext(AppContext);
@@ -16,19 +15,19 @@ export default function TerapeutiSection() {
     scrollSlider('.slider-terapeuti-group');
   }, []);
 
-  const currentQObj = useQuery(GET_ALL_PARTNERS);  
+  const currentQObj = useQuery(GET_ALL_PARTNERS);
   const queryData = currentQObj?.data ? currentQObj.data['getAllPartners'] : [];
-  
-  useEffect(() => {   
-    if(queryData) {
-      const processedData  = processPartners(queryData);    
-      if(processedData.length){
-        setTerapeuti(processedData);        
+
+  useEffect(() => {
+    if (queryData) {
+      const processedData = processPartners(queryData);
+      if (processedData.length) {
+        setTerapeuti(processedData);
       } else {
         setTerapeuti([]);
       }
     }
-  }, [queryData])
+  }, [queryData]);
 
   return (
     <div

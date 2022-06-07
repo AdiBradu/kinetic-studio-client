@@ -1,20 +1,27 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AppProvider } from './contexts/AppContext';
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink  } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 
 const link = createHttpLink({
-  uri: process.env.NODE_ENV !== 'production' ? 'http://localhost:4040/graphql' : 'http://localhost:4040/graphql',
-  credentials: 'include'
+  uri:
+    process.env.NODE_ENV !== 'production'
+      ? 'http://localhost:4040/graphql'
+      : 'http://localhost:4040/graphql',
+  credentials: 'include',
 });
 const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),
 });
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
