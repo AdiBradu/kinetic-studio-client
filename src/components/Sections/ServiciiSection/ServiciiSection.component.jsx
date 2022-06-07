@@ -16,7 +16,6 @@ export default function ServiciiSection() {
 
   const currentQObj = useQuery(GET_ALL_SERVICES);
   const queryData = currentQObj?.data ? currentQObj.data['getAllServices'] : [];
-  console.log(queryData);
 
   useEffect(() => {
     if (queryData) {

@@ -74,6 +74,7 @@ export default function ProgramareSection() {
 
   useEffect(() => {
     if (startProgramare) {
+      setIsLoading(true);
       if (sQData) {
         const pSData = processServices(sQData);
         if (pSData.length) {
@@ -88,8 +89,9 @@ export default function ProgramareSection() {
           setTerapeuti(pPData);
         }
       }
+      setIsLoading(false);
     }
-  }, [sQData, pQData]);
+  }, [startProgramare]);
 
   const { specializare, sedinte, durataSedinta } = useSetServiciuContext(
     servicii,
@@ -185,15 +187,15 @@ export default function ProgramareSection() {
     setTerapeutId(null);
     setStartDate(null);
     setTimeSlotStart(null);
-    setStartProgramare(false);
+    // setStartProgramare(false);
 
-    /* setTimeout(() => {
-      setStatusComanda(false);
-      setServiciu(null);
-      setTerapeutId(null);
-      setStartDate(null);
-      setTimeSlotStart(null);
-      
+    setTimeout(() => {
+      // setStatusComanda(false);
+      // setServiciu(null);
+      // setTerapeutId(null);
+      // setStartDate(null);
+      // setTimeSlotStart(null);
+
       console.log('comanda', comanda);
       setComanda({
         nume: '',
@@ -210,7 +212,7 @@ export default function ProgramareSection() {
         programari: [],
       });
       setStartProgramare(false);
-    }, 2000); */
+    }, 2000);
   };
 
   const { terapeutCalendar, terapeutProgramari } =
