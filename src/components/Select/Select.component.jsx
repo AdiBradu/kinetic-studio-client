@@ -8,7 +8,6 @@ export default function Select({
   handleChange,
   placeholder,
 }) {
-  console.log(options);
   return (
     <>
       <div className="select-atom">

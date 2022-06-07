@@ -179,6 +179,7 @@
       font-size: 0.875rem;
       color: $textDark;
       text-transform: capitalize;
+      line-height: 3rem;
       &:checked,
       :focus {
         background-color: $primaryColor;

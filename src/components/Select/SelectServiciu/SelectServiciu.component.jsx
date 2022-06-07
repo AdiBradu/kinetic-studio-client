@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import './SelectServiciu.component.scss';
-import {checkIfActiveElement} from '../../../utils.js';
+import { checkIfActiveElement } from '../../../utils.js';
 
 export default function SelectServiciu({
   options,
@@ -9,9 +9,8 @@ export default function SelectServiciu({
   value,
   handleChange,
 }) {
-
   const inputRef = useRef(null);
-  checkIfActiveElement(inputRef);  
+  checkIfActiveElement(inputRef);
   return (
     <>
       {options.length > 0 && (
@@ -19,8 +18,17 @@ export default function SelectServiciu({
           <label>
             <p>Alege serviciul</p>
           </label>
-          <select name={name} onChange={handleChange} value={value} ref={inputRef}>
-            {<option disabled hidden></option>}
+          <select
+            name={name}
+            onChange={handleChange}
+            defaultValue={'default'}
+            ref={inputRef}
+          >
+            {
+              <option disabled hidden value={'default'}>
+                Alege serviciul
+              </option>
+            }
             {options.map((option, index) => (
               <option key={index} value={option.id}>
                 {option.denumire}

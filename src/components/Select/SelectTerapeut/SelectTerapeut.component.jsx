@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import './SelectTerapeut.component.scss';
-import {checkIfActiveElement} from '../../../utils.js';
+import { checkIfActiveElement } from '../../../utils.js';
 
 export default function SelectTerapeut({
   options,
@@ -9,7 +9,6 @@ export default function SelectTerapeut({
   value,
   handleChange,
 }) {
-
   const inputRef = useRef(null);
   checkIfActiveElement(inputRef);
 
@@ -18,8 +17,15 @@ export default function SelectTerapeut({
       <label>
         <p>Alege terapeutul</p>
       </label>
-      <select name={name} onChange={handleChange} value={value} ref={inputRef}>
-        {<option disabled hidden></option>}
+      <select
+        name={name}
+        onChange={handleChange}
+        defaultValue={'default'}
+        ref={inputRef}
+      >
+        <option disabled hidden value={'default'}>
+          Alege terapeutul
+        </option>
         {options &&
           options.map((option, index) => (
             <option key={index} value={option.id}>
