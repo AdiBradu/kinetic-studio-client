@@ -25,8 +25,9 @@ import {
 import axios from 'axios';
 import Spinner from '../../Spinner/Spinner.component.jsx';
 import ErrorScreen from '../../ErrorScreen/ErrorScreen.component.jsx';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { GET_ALL_PARTNERS, GET_ALL_SERVICES } from '../../../graphql/queries';
+import { CREATE_CUSTOMER_ORDER } from '../../../graphql/mutations';
 
 export default function ProgramareSection() {
   const { isTablet } = useContext(AppContext);
@@ -65,7 +66,7 @@ export default function ProgramareSection() {
     specializare: '',
     programari: [],
   });
-
+  const [createOrder, createOrderObj] = useMutation(CREATE_CUSTOMER_ORDER);  
   // console.log(comanda);
 
   /* useEffect(() => {
@@ -98,34 +99,26 @@ export default function ProgramareSection() {
   const sQData = sQObj?.data ? sQObj.data['getAllServices'] : [];
   const pQObj = useQuery(GET_ALL_PARTNERS);
   const pQData = pQObj?.data ? pQObj.data['getAllPartners'] : [];
-
-  console.log(sQData);
-
-  // useEffect(() => {
-  //   if (startProgramare) {
-  //     setIsLoading(true);
-  //     if (sQData) {
-  //       const pSData = processServices(sQData);
-  //       if (pSData.length) {
-  //         setHasData(true);
-  //         setServicii(pSData);
-  //         setServiciu(pSData[0].id);
-  //       } else {
-  //         setHasData(false);
-  //         setServicii([]);
-  //       }
-  //     }
-  //     if (pQData) {
-  //       const pPData = processPartners(pQData);
-  //       if (pPData.length) {
-  //         setTerapeuti(pPData);
-  //       } else {
-  //         setTerapeuti([]);
-  //       }
-  //     }
-  //     setIsLoading(false);
-  //   }
-  // }, [startProgramare]);
+ 
+  useEffect(() => {
+    if (startProgramare) {
+      if (sQData) {
+        const pSData = processServices(sQData);
+        if (pSData.length) {
+          setHasData(true);
+          setServicii(pSData);
+          setServiciu(pSData[0].id);
+        }
+      }
+      if (pQData) {
+        const pPData = processPartners(pQData);
+        if (pPData.length) {
+          setTerapeuti(pPData);
+        }
+      }
+    }
+    
+  }, [startProgramare, sQData, pQData]);
 
   const { specializare, sedinte, durataSedinta } = useSetServiciuContext(
     servicii,
@@ -189,14 +182,36 @@ export default function ProgramareSection() {
     }
   }, [programareFromCard]);
 
-  const handleProgramare = () => {
+  const handleProgramare = async () => {
     setStatusComanda(true);
-    setTimeout(() => {
+    let dets = [];
+    if(comanda.programari.length) {
+      comanda.programari.forEach((el) => {
+        const objSched = {
+          partner_id: parseFloat(el.terapeut),
+          appointment_start: parseFloat(el.timeSlotStart),
+          appointment_end: parseFloat(el.timeSlotEnd),
+          appointment_order: parseInt(el.sedinta),
+        };
+        dets.push(objSched);
+      });
+    }
+    await createOrder({variables: {firstName: comanda.prenume, lastName: comanda.nume, phone: comanda.telefon, email: comanda.email, region: comanda.judet, city: comanda.localitate, street: comanda.strada, streetNumber: comanda.nr, serviceId: parseFloat(comanda.serviciu) , details: dets}});
+    setStatusComanda(false);
+    setServiciu(null);
+    setTerapeutId(null);
+    setStartDate(null);
+    setTimeSlotStart(null); 
+    setStartProgramare(false);
+
+    /* setTimeout(() => {
       setStatusComanda(false);
       setServiciu(null);
       setTerapeutId(null);
       setStartDate(null);
       setTimeSlotStart(null);
+      
+      console.log('comanda', comanda);
       setComanda({
         nume: '',
         prenume: '',
@@ -212,7 +227,7 @@ export default function ProgramareSection() {
         programari: [],
       });
       setStartProgramare(false);
-    }, 2000);
+    }, 2000); */
   };
 
   const { terapeutCalendar, terapeutProgramari } =
