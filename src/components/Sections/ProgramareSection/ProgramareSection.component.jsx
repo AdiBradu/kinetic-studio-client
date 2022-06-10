@@ -3,6 +3,7 @@ import './ProgramareSection.component.scss';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AppContext } from '../../../contexts/AppContext';
 import ButtonProgramare from '../../Button/Button.component.jsx';
+import SelectSpecializare from '../../Select/SelectSpecializare/SelectSpecializare.component';
 import SelectServiciu from '../../Select/SelectServiciu/SelectServiciu.component.jsx';
 import SelectTerapeut from '../../Select/SelectTerapeut/SelectTerapeut.component.jsx';
 import SelectTimeSlot from '../../Select/SelectTimeSlot/SelectTimeSlot.component.jsx';
@@ -19,26 +20,33 @@ import useCreateProgramari from '../../../hooks/useCreateProgramari.jsx';
 import {
   checkIfCalendar,
   checkIfProgramari,
+  processMTypes,
   processPartners,
   processServices,
 } from '../../../utils.js';
 import Spinner from '../../Spinner/Spinner.component.jsx';
 import ErrorScreen from '../../ErrorScreen/ErrorScreen.component.jsx';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_ALL_PARTNERS, GET_ALL_SERVICES } from '../../../graphql/queries';
+import {
+  GET_ALL_PARTNERS,
+  GET_ALL_SERVICES,
+  GET_ALL_M_TYPES,
+} from '../../../graphql/queries';
 import { CREATE_CUSTOMER_ORDER } from '../../../graphql/mutations';
+import useFilterServicii from '../../../hooks/useFilterServicii';
 
 export default function ProgramareSection() {
   const { isTablet } = useContext(AppContext);
 
   const { programareFromCardObj } = useContext(AppContext);
   const [programareFromCard, setProgramareFromCard] = programareFromCardObj;
-
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [hasData, setHasData] = useState(false);
 
   const [startProgramare, setStartProgramare] = useState(false);
+  const [specializari, setSpecializari] = useState([]);
+  const [specializare, setSpecializare] = useState(null);
   const [servicii, setServicii] = useState([]);
   const [serviciu, setServiciu] = useState(null);
   const [terapeuti, setTerapeuti] = useState(null);
@@ -65,22 +73,31 @@ export default function ProgramareSection() {
     specializare: '',
     programari: [],
   });
+  // console.log('Comanda', comanda);
   const [createOrder, createOrderObj] = useMutation(CREATE_CUSTOMER_ORDER);
 
+  const mQObj = useQuery(GET_ALL_M_TYPES);
+  const mQData = mQObj?.data ? mQObj.data['getAllMTypes'] : [];
   const sQObj = useQuery(GET_ALL_SERVICES);
   const sQData = sQObj?.data ? sQObj.data['getAllServices'] : [];
   const pQObj = useQuery(GET_ALL_PARTNERS);
   const pQData = pQObj?.data ? pQObj.data['getAllPartners'] : [];
 
   useEffect(() => {
-    if (startProgramare) {
+    if (startProgramare || programareFromCard) {
       setIsLoading(true);
+      if (mQData) {
+        const pMData = processMTypes(mQData);
+        if (pMData.length) {
+          setHasData(true);
+          setSpecializari(pMData);
+        }
+      }
       if (sQData) {
         const pSData = processServices(sQData);
         if (pSData.length) {
           setHasData(true);
           setServicii(pSData);
-          setServiciu(pSData[0].id);
         }
       }
       if (pQData) {
@@ -91,12 +108,9 @@ export default function ProgramareSection() {
       }
       setIsLoading(false);
     }
-  }, [startProgramare]);
+  }, [startProgramare, programareFromCard]);
 
-  const { specializare, sedinte, durataSedinta } = useSetServiciuContext(
-    servicii,
-    serviciu,
-  );
+  const { sedinte, durataSedinta } = useSetServiciuContext(servicii, serviciu);
 
   useEffect(() => {
     if (terapeutId) {
@@ -109,6 +123,7 @@ export default function ProgramareSection() {
   }, [terapeutId]);
 
   const { filteredTerapeuti } = useFilterTerapeuti(terapeuti, specializare);
+  const { filteredServicii } = useFilterServicii(servicii, specializare);
 
   const { programari } = useCreateProgramari(
     startDate,
@@ -116,6 +131,11 @@ export default function ProgramareSection() {
     timeSlotStart,
     sedinte,
   );
+
+  const handleChangeSpecializare = (e) => {
+    const value = e.target.value;
+    setSpecializare(value);
+  };
 
   const handleChangeServiciu = (e) => {
     const value = e.target.value;
@@ -146,16 +166,32 @@ export default function ProgramareSection() {
   useEffect(() => {
     if (programareFromCard) {
       setStartProgramare(true);
-      setServiciu(programareFromCard);
-      setComanda({
-        ...comanda,
-        serviciu: programareFromCard,
-      });
     }
   }, [programareFromCard]);
 
+  useEffect(() => {
+    if (programareFromCard) {
+      const spec = specializari.filter(
+        (spec) => spec.id == programareFromCard.specializare,
+      );
+      const serv = servicii.filter(
+        (serviciu) =>
+          serviciu.denumire.toLowerCase() ==
+          programareFromCard.denumire.toLowerCase(),
+      );
+      setSpecializare(spec[0].denumire);
+      setServiciu(programareFromCard.denumire);
+      setComanda({
+        ...comanda,
+        serviciu: serv[0].id,
+        specializare: spec[0].denumire,
+      });
+    }
+  }, [startProgramare]);
+
   const handleProgramare = async () => {
     setStatusComanda(true);
+
     let dets = [];
     if (comanda.programari.length) {
       comanda.programari.forEach((el) => {
@@ -168,6 +204,7 @@ export default function ProgramareSection() {
         dets.push(objSched);
       });
     }
+
     await createOrder({
       variables: {
         firstName: comanda.prenume,
@@ -182,21 +219,8 @@ export default function ProgramareSection() {
         details: dets,
       },
     });
-    setStatusComanda(false);
-    setServiciu(null);
-    setTerapeutId(null);
-    setStartDate(null);
-    setTimeSlotStart(null);
-    // setStartProgramare(false);
 
     setTimeout(() => {
-      // setStatusComanda(false);
-      // setServiciu(null);
-      // setTerapeutId(null);
-      // setStartDate(null);
-      // setTimeSlotStart(null);
-
-      console.log('comanda', comanda);
       setComanda({
         nume: '',
         prenume: '',
@@ -211,7 +235,16 @@ export default function ProgramareSection() {
         specializare: '',
         programari: [],
       });
+      setStatusComanda(false);
       setStartProgramare(false);
+      setProgramareFromCard(null);
+      setSpecializare(null);
+      setServiciu(null);
+      setTerapeutId(null);
+      setStartDate(null);
+      setTimeSlotStart(null);
+      const heroSection = document.querySelector('.hero-section');
+      heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 2000);
   };
 
@@ -257,19 +290,35 @@ export default function ProgramareSection() {
             }
           />
           <div className="programare-section-container flex flex-column justify-center align-center">
-            {startProgramare && (
+            {startProgramare ? (
+              <SelectSpecializare
+                value={
+                  programareFromCard ? specializare : 'Alege specializarea'
+                }
+                handleChange={handleChangeSpecializare}
+                name="specializare"
+                label={'specializare'}
+                options={specializari}
+              />
+            ) : (
+              ''
+            )}
+
+            {specializare ? (
               <SelectServiciu
-                value={serviciu}
+                value={programareFromCard ? serviciu : 'Alege serviciul'}
                 handleChange={handleChangeServiciu}
                 name="serviciu"
                 label={'serviciu'}
-                options={servicii}
+                options={filteredServicii}
               />
+            ) : (
+              ''
             )}
 
             {serviciu ? (
               <SelectTerapeut
-                value={terapeutId}
+                value={'Alege terapeutul'}
                 handleChange={handleChangeTerapeut}
                 name="terapeut"
                 label={'terapeut'}
@@ -279,7 +328,7 @@ export default function ProgramareSection() {
               ''
             )}
 
-            {terapeutId && (
+            {terapeutId ? (
               <div className="calendar">
                 <label>
                   <p>Alege data</p>
@@ -299,52 +348,62 @@ export default function ProgramareSection() {
                   inline
                 />
               </div>
+            ) : (
+              ''
             )}
 
-            {startDate && (
+            {startDate ? (
               <SelectTimeSlot
-                value={timeSlotStart}
+                value={'Alege ora'}
                 handleChange={handleChangeTime}
                 name="time"
                 label={'time'}
                 options={filteredHours}
               />
+            ) : (
+              ''
             )}
 
-            {timeSlotStart && (
+            {timeSlotStart ? (
               <Input
                 value={comanda.nume}
                 handleChange={handleChange}
                 name="nume"
                 label={'nume'}
                 type={'text'}
-                placeholder={'type'}
+                placeholder={'Nume'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.nume !== '' && (
+            {comanda.nume !== '' ? (
               <Input
                 value={comanda.prenume}
                 handleChange={handleChange}
                 name="prenume"
                 label={'prenume'}
                 type={'text'}
-                placeholder={'type'}
+                placeholder={'prenume'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.prenume !== '' && (
+            {comanda.prenume !== '' ? (
               <Input
                 value={comanda.telefon}
                 handleChange={handleChange}
                 name="telefon"
                 label={'telefon'}
                 type={'number'}
-                placeholder={'type'}
+                placeholder={'telefon'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.telefon !== '' && (
+            {comanda.telefon !== '' ? (
               <Input
                 value={comanda.email}
                 handleChange={handleChange}
@@ -353,53 +412,63 @@ export default function ProgramareSection() {
                 type={'email'}
                 placeholder={'email'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.email !== '' && (
+            {comanda.email !== '' ? (
               <Input
                 value={comanda.judet}
                 handleChange={handleChange}
                 name="judet"
                 label={'judet'}
                 type={'text'}
-                placeholder={'type'}
+                placeholder={'judet'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.judet !== '' && (
+            {comanda.judet !== '' ? (
               <Input
                 value={comanda.localitate}
                 handleChange={handleChange}
                 name="localitate"
                 label={'localitate'}
                 type={'text'}
-                placeholder={'type'}
+                placeholder={'localitate'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.localitate !== '' && (
+            {comanda.localitate !== '' ? (
               <Input
                 value={comanda.strada}
                 handleChange={handleChange}
                 name="strada"
                 label={'strada'}
                 type={'text'}
-                placeholder={'type'}
+                placeholder={'strada'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.strada !== '' && (
+            {comanda.strada !== '' ? (
               <Input
                 value={comanda.nr}
                 handleChange={handleChange}
                 name="nr"
                 label={'nr'}
                 type={'text'}
-                placeholder={'type'}
+                placeholder={'nr strada'}
               />
+            ) : (
+              ''
             )}
 
-            {comanda.nr !== '' && (
+            {comanda.nr !== '' ? (
               <div
                 className="btn-wrapper flex flex-column justify-center align-center"
                 onClick={() => handleProgramare()}
@@ -409,6 +478,8 @@ export default function ProgramareSection() {
                   classe={'btn-programare-client'}
                 />
               </div>
+            ) : (
+              ''
             )}
 
             {!startProgramare ? (
@@ -425,10 +496,12 @@ export default function ProgramareSection() {
               ''
             )}
 
-            {statusComanda && (
+            {statusComanda ? (
               <p style={{ marginTop: '16px' }}>
                 Comanda a fost finalizata cu succes!
               </p>
+            ) : (
+              ''
             )}
           </div>
         </div>

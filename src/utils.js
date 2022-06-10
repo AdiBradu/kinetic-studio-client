@@ -175,6 +175,20 @@ export const scrollToTarget = (target) => {
   });
 };
 
+export const processMTypes = (data) => {
+  const dataP = [];
+  if (data && data.length) {
+    data.forEach((el) => {
+      const objZone = {
+        id: el.mt_id,
+        denumire: el.mt_name,
+      };
+      dataP.push(objZone);
+    });
+  }
+  return dataP;
+};
+
 export const processServices = (data) => {
   const dataP = [];
   if (data && data.length) {
@@ -182,7 +196,7 @@ export const processServices = (data) => {
       const objZone = {
         id: el.s_id,
         denumire: el.service_name,
-        specializare: el.mt_name,
+        specializare: el.m_type_id,
         sedinte: el.appointments_number,
         durata: el.appointment_duration,
         tarif: el.service_cost,

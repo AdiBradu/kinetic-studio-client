@@ -15,7 +15,7 @@ export default function SelectTerapeut({
   return (
     <div className="select-atom atom-field">
       <label>
-        <p>Alege terapeutul</p>
+        <p>Terapeut</p>
       </label>
       <select
         name={name}
@@ -24,7 +24,7 @@ export default function SelectTerapeut({
         ref={inputRef}
       >
         <option disabled hidden value={'default'}>
-          Alege terapeutul
+          {value}
         </option>
         {options &&
           options.map((option, index) => (

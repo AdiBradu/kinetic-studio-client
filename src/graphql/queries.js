@@ -1,5 +1,16 @@
 import { gql } from '@apollo/client';
 
+export const GET_ALL_M_TYPES = gql`
+  query {
+    getAllMTypes {
+      mt_id
+      mt_name
+      created
+      updated
+    }
+  }
+`;
+
 export const GET_ALL_SERVICES = gql`
   query {
     getAllServices {

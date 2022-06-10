@@ -3,7 +3,7 @@ import './Footer.component.scss';
 import variables from '../../styles/_variables.module.scss';
 import FooterLinks from './FooterLinks/FooterLinks.component';
 import SocialMediaGroup from '../SocialMediaGroup/SocialMediaGroup.component';
-import Netopia from '../../assets/images/netopia.png';
+import Netopia from '../../assets/images/netopia.webp';
 import ImagePlaceholder from '../ImagePlaceholder/ImagePlaceholder.component.jsx';
 import { ReactComponent as FooterLogo } from '../../assets/logos/logoKineticStudioPortrait.svg';
 import { AppContext } from '../../contexts/AppContext';

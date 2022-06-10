@@ -74,7 +74,7 @@
         }
       }
       .react-datepicker {
-        background-color: $backgroundLight !important;
+        background-color: $primaryColorExtraLight !important;
         color: $textDark;
         border-color: $border;
         width: 100%;
@@ -89,7 +89,7 @@
           margin: auto;
           width: 100%;
           .react-datepicker__header {
-            background-color: $backgroundLight;
+            background-color: $primaryColorExtraLight;
             border-color: $border;
             .react-datepicker__current-month {
               color: $textDark;

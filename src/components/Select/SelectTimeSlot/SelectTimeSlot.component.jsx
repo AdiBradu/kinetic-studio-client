@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import './SelectTimeSlot.component.scss';
-import {checkIfActiveElement} from '../../../utils.js';
+import { checkIfActiveElement } from '../../../utils.js';
 
 export default function SelectTimeSlot({
   label,
@@ -8,7 +8,6 @@ export default function SelectTimeSlot({
   handleChange,
   options,
 }) {
-
   const inputRef = useRef(null);
   checkIfActiveElement(inputRef);
 
@@ -22,10 +21,19 @@ export default function SelectTimeSlot({
     <>
       <div className="select-atom atom-field">
         <label>
-          <p>Alege ora</p>
+          <p>Ora</p>
         </label>
-        <select name={label} onChange={handleChange} value={value} ref={inputRef}>
-          {<option disabled hidden></option>}
+        <select
+          name={label}
+          onChange={handleChange}
+          defaultValue={'default'}
+          ref={inputRef}
+        >
+          {
+            <option disabled hidden value={'default'}>
+              {value}
+            </option>
+          }
           {options &&
             options.map((option, index) => (
               <option key={index} value={option}>

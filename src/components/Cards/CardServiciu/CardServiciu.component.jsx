@@ -19,14 +19,18 @@ export default function CardServiciu({
 
   const handleCardClick = () => {
     scrollToTarget('.programare-section');
-    setProgramareFromCard(nume);
+    setProgramareFromCard({ denumire: nume, specializare: masaj });
   };
 
   return (
     <div className="card-serviciu">
       <div className="card-serviciu-header">
         <p className="card">{nume}</p>
-        <ImagePlaceholder image={image} imageAlt={imageAlt} classe={'card-image'} />
+        <ImagePlaceholder
+          image={image}
+          imageAlt={imageAlt}
+          classe={'card-image'}
+        />
       </div>
       <div className="card-serviciu-body">
         <div className="card-serviciu-body-data">

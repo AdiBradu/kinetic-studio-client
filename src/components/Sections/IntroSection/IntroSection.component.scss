@@ -4,8 +4,8 @@
   flex-direction: column;
   gap: calc(1.5 * #{$unit});
   padding: $unit;
+  max-width: 400px;
   @media (min-width: $md) {
-    max-width: 400px;
     padding: 0px;
   }
   @media (min-width: $xxl) {

@@ -4,6 +4,7 @@
   display: inline-flex;
   background-color: $primaryColorLight;
   width: 80vw;
+  max-width: 320px;
   height: 176px;
   border: 1px solid $border;
   border-radius: 8px;
@@ -11,7 +12,6 @@
   flex: none;
   margin-right: 16px;
   @media (min-width: $md) {
-    max-width: 320px;
     scroll-snap-align: none;
   }
   .card-terapeut-header {

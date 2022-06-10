@@ -39,6 +39,10 @@ h3 {
   font-weight: 500;
   text-transform: capitalize;
 }
+select,
+input {
+  font-size: 1.125rem;
+}
 .display1 {
   font-size: 4.312rem;
   font-weight: 600;
@@ -99,6 +103,10 @@ h3 {
   }
   h3 {
     font-size: 1.562rem;
+  }
+  select,
+  input {
+    font-size: 1.25rem;
   }
   .display1 {
     font-size: 4.75rem;

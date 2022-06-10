@@ -4,9 +4,9 @@ const useFilterTerapeuti = (terapeuti, specializare) => {
   const [filteredTerapeuti, setFilteredTerapeuti] = useState();
 
   useEffect(() => {
-    if (terapeuti) {
+    if (specializare) {
       const filteredArray = terapeuti.filter((terapeut) =>
-        terapeut.specializare.includes(specializare),
+        terapeut.specializare.toLowerCase().includes(specializare),
       );
       setFilteredTerapeuti(filteredArray);
     }

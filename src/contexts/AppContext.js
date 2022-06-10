@@ -10,7 +10,7 @@ export const AppProvider = (props) => {
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   const isLandscape = useMediaQuery({ query: '(orientation: landscape)' });
 
-  const [programareFromCard, setProgramareFromCard] = useState();
+  const [programareFromCard, setProgramareFromCard] = useState(null);
 
   return (
     <AppContext.Provider

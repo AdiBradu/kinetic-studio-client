@@ -3,8 +3,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 480px;
   margin-bottom: $unit;
+  @media (min-width: $md) {
+    max-width: 400px;
+  }
+  @media (min-width: $xxl) {
+    max-width: 480px;
+  }
   label {
     width: 100%;
     color: $textDark;
@@ -17,12 +22,10 @@
     width: 100%;
     background-color: $primaryColorExtraLight;
     padding: calc(0.5 * #{$unit});
-    font-size: 0.875rem;
     color: $textDark;
     border: 1px solid $border;
     border-radius: calc(0.25 * #{$unit});
     &::placeholder {
-      font-size: 0.875rem;
       color: $grayLight;
     }
     &:focus {

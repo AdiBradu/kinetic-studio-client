@@ -4,6 +4,7 @@
   display: inline-flex;
   background-color: $primaryColorLight;
   width: 80vw;
+  max-width: 320px;
   height: 176px;
   border: 1px solid $border;
   border-radius: 8px;
@@ -13,7 +14,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   @media (min-width: $md) {
-    max-width: 320px;
     scroll-snap-align: none;
   }
   .card-serviciu-header {
@@ -27,7 +27,7 @@
       color: $textLight;
       z-index: 1;
       margin: auto;
-      max-width: 10ch;
+      max-width: 8ch;
     }
   }
   .card-serviciu-body {
