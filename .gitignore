@@ -6,15 +6,13 @@
 .pnp.js
 .env
 .gitignore
-package-lock.json
 .prettierrc
-
 
 # testing
 /coverage
 
 # production
-/build
+
 
 # misc
 .DS_Store
@@ -22,9 +20,7 @@ package-lock.json
 .env.development.local
 .env.test.local
 .env.production.local
-.env
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-

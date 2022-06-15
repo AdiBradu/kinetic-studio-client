@@ -16,5 +16,5 @@ app.get('/*', function (req, res) {
 });
 
 app.listen(process.env.PORT, () =>
-  console.log(`Kinetic Studio server running on port ${process.env.PORT}`),
+  console.log(`Kinetic Studio Client server running on port ${process.env.PORT}`),
 );
