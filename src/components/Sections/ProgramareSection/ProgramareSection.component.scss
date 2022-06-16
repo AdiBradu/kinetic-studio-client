@@ -1,7 +1,7 @@
 @import '../../../styles/variables.module.scss';
 .programare-section {
-  margin-top: calc(6 * #{$unit});
-  margin-bottom: calc(6 * #{$unit});
+  margin-top: calc(4 * #{$unit});
+  margin-bottom: calc(4 * #{$unit});
   padding: $unit;
   display: flex;
   flex-direction: column;

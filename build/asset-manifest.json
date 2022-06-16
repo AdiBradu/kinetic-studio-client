@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.e0cf9e42.css",
+    "main.css": "/static/css/main.80fb23b2.css",
     "main.js": "/static/js/main.60a33f2b.js",
     "static/js/787.604bf1a5.chunk.js": "/static/js/787.604bf1a5.chunk.js",
     "static/media/masajRelaxare.jpg": "/static/media/masajRelaxare.0ce00aded6da36af0609.jpg",
@@ -10,12 +10,12 @@
     "static/media/netopia.webp": "/static/media/netopia.36544c994bf481f47ef0.webp",
     "static/media/iconCallButton.svg": "/static/media/iconCallButton.9163e83a0380baccccd396f4bfad3f98.svg",
     "index.html": "/index.html",
-    "main.e0cf9e42.css.map": "/static/css/main.e0cf9e42.css.map",
+    "main.80fb23b2.css.map": "/static/css/main.80fb23b2.css.map",
     "main.60a33f2b.js.map": "/static/js/main.60a33f2b.js.map",
     "787.604bf1a5.chunk.js.map": "/static/js/787.604bf1a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0cf9e42.css",
+    "static/css/main.80fb23b2.css",
     "static/js/main.60a33f2b.js"
   ]
 }

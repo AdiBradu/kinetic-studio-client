@@ -2,7 +2,7 @@
 .intro-section {
   display: flex;
   flex-direction: column;
-  gap: calc(1.5 * #{$unit});
+  gap: calc(1 * #{$unit});
   padding: $unit;
   max-width: 400px;
   @media (min-width: $md) {
