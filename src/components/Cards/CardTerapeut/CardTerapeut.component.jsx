@@ -1,6 +1,7 @@
 import React from 'react';
 import './CardTerapeut.component.scss';
 import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component.jsx';
+import { toCapitalCase } from '../../../utils.js';
 
 export default function CardTerapeut({ image, imageAlt, nume, specializare, descriere }) {
   return (
@@ -20,7 +21,7 @@ export default function CardTerapeut({ image, imageAlt, nume, specializare, desc
           </div>
         </div>
         <div className="card-terapeut-body-description">
-          <p className="card-descriere">{descriere}</p>
+          <p className="card-descriere">{toCapitalCase(descriere)}</p>
         </div>
       </div>
     </div>
