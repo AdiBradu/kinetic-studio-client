@@ -8,10 +8,10 @@
     display: flex;
   }
   svg {
-    transition: all 300ms;
-    :hover {
+    &:hover {
       cursor: pointer;
       opacity: 0.75;
+      transition: all 300ms;
     }
   }
 }
