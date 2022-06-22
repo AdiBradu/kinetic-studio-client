@@ -13,6 +13,12 @@ export const wathcResize = () => {
   window.addEventListener('resize', documentHeight);
 };
 
+export const toCapitalCase = (word) => {
+  if(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+  }
+};
+
 export const timestampToDate = (timestamp) => {
   const date = new Date(timestamp);
   return date.getDate();
