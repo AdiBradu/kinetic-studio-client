@@ -2,13 +2,13 @@
 .card-benefit {
   width: 100%;
   max-width: 320px;
-  height: 240px;
+  // height: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   padding: calc(1.5 * #{$unit});
   gap: $unit;
   // background-color: $backgroundLight;
@@ -16,11 +16,11 @@
   border: 1px solid $border;
   border-radius: 8px;
   @media (min-width: $md) {
-    max-width: calc(50% - 8px);
+    max-width: calc(50% - 16px);
+    height: 333px;
   }
   @media (min-width: $xxl) {
-    max-width: 285px;
-    height: 320px;
+    height: 294px;
   }
   img {
     position: relative;

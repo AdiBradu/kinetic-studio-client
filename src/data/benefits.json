@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "icon": "assets/icons/iconCardBenefitOnline.svg",
-    "header": "programare online",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    "icon": "assets/icons/iconCardBenefitPretCorect.svg",
+    "header": "pret corect",
+    "copy": "Preturile includ costul transportului iar deplasarea in judetul Ilfov presupune o taxa suplimentara de 30 lei. Nu este nevoie de tips, preferam o recomandare."
   },
   {
     "id": 2,
-    "icon": "assets/icons/iconCardBenefitFlexibilitate.svg",
-    "header": "flexibilitate",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    "icon": "assets/icons/iconCardBenefitOnline.svg",
+    "header": "programare online",
+    "copy": "Foloseste formularul din josul paginii si programeaza-te simplu, doar prin cateva click-uri. Vei primi confirmarea pe email."
   },
   {
     "id": 3,
     "icon": "assets/icons/iconCardBenefitPayment.svg",
     "header": "plata cu cardul",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    "copy": "La indemana oricui, platiti in siguranta. Se poate accepta si plata cash doar la sedinta de bun-venit."
   },
   {
     "id": 4,
     "icon": "assets/icons/iconCardBenefitAnulare.svg",
     "header": "anuleaza oricand",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    "copy": "Programarea se poate anula in orice moment. Pentru anularea cu cel mult 24 de ore inaintea programarii stabilite nu se ramburseaza contravaloarea serviciului."
   }
 ]

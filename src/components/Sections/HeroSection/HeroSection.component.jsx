@@ -8,15 +8,18 @@ import { scrollToTarget } from '../../../utils.js';
 export default function HeroSection() {
   return (
     <section className="hero-section">
-      <ImagePlaceholder image={"https://kineticstudio.ro/images/heroImage.webp"} imageAlt={'Kinetic Studio'} classe={'hero-image'} />
+      <ImagePlaceholder
+        image={'https://kineticstudio.ro/images/heroImage.webp'}
+        imageAlt={'Kinetic Studio'}
+        classe={'hero-image'}
+      />
       <div className="hero-body">
         <div className="hero-body-message">
-          <h1 className="display3">
-            Masaj de relaxare si terapeutic la domiciliu
-          </h1>
+          <h1 className="display3">Bine ati venit la KineticStudio</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor eget
-            nulla iaculis odio proin in.
+            Fie ca va aflati la hotel sau la birou, fie ca va doriti o
+            programare in confortul propriei casei, alegeti unul dintre
+            serviciile noastre si bucurati-va de experienta KineticStudio!
           </p>
         </div>
         <div

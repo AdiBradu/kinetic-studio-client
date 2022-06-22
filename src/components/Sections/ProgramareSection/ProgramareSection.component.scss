@@ -7,6 +7,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (min-width: $md) {
+    padding: 0px;
+  }
   .intro-section {
     padding: 0px;
   }

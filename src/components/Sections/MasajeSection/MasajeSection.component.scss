@@ -30,7 +30,9 @@
       display: flex;
       @media (min-width: $md) {
         position: absolute;
-        height: 480px;
+        height: 640px;
+        padding-top: 0px;
+        padding-bottom: 0px;
       }
       @media (min-width: $xxl) {
         height: 800px;
@@ -46,7 +48,7 @@
         @media (min-width: $md) {
           margin-left: auto;
           width: 50%;
-          height: 480px;
+          height: 640px;
           padding: 0px 0px 0px calc(2 * #{$unit});
         }
         @media (min-width: $xxl) {

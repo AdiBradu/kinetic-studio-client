@@ -20,6 +20,9 @@
 
 .padding {
   padding: $unit;
+  @media (min-width: $md) {
+    padding: $unit calc(1.5 * #{$unit});
+  }
   @media (min-width: $xxl) {
     padding: calc(2 * #{$unit}) calc(4 * #{$unit});
   }
@@ -36,6 +39,10 @@
   padding: $unit;
   @media (min-width: $md) {
     width: 768px;
+    padding: $unit calc(1.5 * #{$unit});
+  }
+  @media (min-width: $lg) {
+    padding: 0px;
   }
   @media (min-width: $xxl) {
     padding: 0px;

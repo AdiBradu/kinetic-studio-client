@@ -20,7 +20,7 @@ img.masaj-terapeutic {
   height: 400px;
   @media (min-width: $md) {
     width: 50%;
-    height: 480px;
+    height: 640px;
   }
   @media (min-width: $xxl) {
     width: 50%;
@@ -34,6 +34,9 @@ img.netopia {
   width: 100%;
   object-fit: contain;
   margin-bottom: auto;
+  @media (min-width: $md) {
+    width: 25%;
+  }
 }
 
 img.card-image {
