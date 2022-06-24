@@ -40,7 +40,6 @@ export default function ProgramareSection() {
 
   const { programareFromCardObj } = useContext(AppContext);
   const [programareFromCard, setProgramareFromCard] = programareFromCardObj;
-  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [hasData, setHasData] = useState(false);
 
@@ -85,7 +84,6 @@ export default function ProgramareSection() {
 
   useEffect(() => {
     if (startProgramare || programareFromCard) {
-      setIsLoading(true);
       if (mQData) {
         const pMData = processMTypes(mQData);
         if (pMData.length) {
@@ -106,7 +104,6 @@ export default function ProgramareSection() {
           setTerapeuti(pPData);
         }
       }
-      setIsLoading(false);
     }
   }, [startProgramare, programareFromCard]);
 
@@ -269,7 +266,7 @@ export default function ProgramareSection() {
 
   return (
     <>
-      {isLoading ? (
+      {mQObj.loading || sQObj.loading || pQObj.loading ? (
         <Spinner />
       ) : isError ? (
         <ErrorScreen />

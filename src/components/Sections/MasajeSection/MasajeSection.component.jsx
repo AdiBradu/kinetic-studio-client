@@ -17,7 +17,7 @@ export default function MasajeSection() {
           imageAlt={'masajTerapeutic'}
           classe={'masaj-terapeutic'}
         />
-        <div className="masaj-body container">
+        <div className="masaj-body">
           <div className="half-container">
             <div className="masaj-body-header">
               <p className="caption">tipuri de masaje</p>
@@ -46,7 +46,7 @@ export default function MasajeSection() {
           imageAlt={'masajRelaxare'}
           classe={'masaj-relaxare'}
         />
-        <div className="masaj-body container">
+        <div className="masaj-body">
           <div className="half-container">
             <div className="masaj-body-header">
               <p className="caption">tipuri de masaje</p>

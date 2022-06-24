@@ -1,8 +1,5 @@
 @import '../../../styles/variables.module.scss';
 .card-benefit {
-  width: 100%;
-  max-width: 320px;
-  // height: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
@@ -11,17 +8,25 @@
   justify-content: start;
   padding: calc(1.5 * #{$unit});
   gap: $unit;
-  // background-color: $backgroundLight;
-  // box-shadow: 0px 8px 16px rgba(128, 128, 128, 0.15);
   border: 1px solid $border;
   border-radius: 8px;
+  margin-left: $unit;
+  margin-right: $unit;
   @media (min-width: $md) {
-    max-width: calc(50% - 16px);
-    height: 333px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: calc(50% - calc(0.5 * #{$unit}));
+    height: 387px;
+  }
+  @media (min-width: $lg) {
+    height: 306px;
+  }
+  @media (min-width: $xl) {
+    height: 279px;
   }
   @media (min-width: $xxl) {
-    height: 294px;
-    height: 324px;
+    max-width: calc(50% - calc(0.75 * #{$unit}));
+    height: 264px;
   }
   img {
     position: relative;

@@ -10,7 +10,7 @@ img.hero-image {
   position: absolute;
   height: 100%;
   width: 100%;
-  filter: brightness(50%);
+  filter: brightness(30%);
 }
 
 img.masaj-relaxare,
@@ -23,7 +23,6 @@ img.masaj-terapeutic {
     height: 640px;
   }
   @media (min-width: $xxl) {
-    width: 50%;
     height: 800px;
   }
 }

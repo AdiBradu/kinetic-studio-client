@@ -3,12 +3,15 @@
   width: 50%;
   flex-grow: 0;
   gap: $unit;
+  position: relative;
   @media (min-width: $md) {
     flex-grow: 1;
     flex-basis: 0;
   }
   ul {
+    position: relative;
     li {
+      position: relative;
       margin-top: $unit;
       &:hover {
         cursor: pointer;

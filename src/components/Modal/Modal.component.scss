@@ -1,0 +1,44 @@
+@import '../../styles/variables.module.scss';
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1001;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p,
+  h1,
+  h2,
+  h3 {
+    color: $textLight;
+  }
+  h1 {
+    margin-top: calc(4 * #{$unit});
+    margin-bottom: calc(2 * #{$unit});
+  }
+  h2,
+  h3 {
+    margin: calc(2 * #{$unit}) 0px;
+    line-height: 120%;
+  }
+  p.close-modal {
+    // position: relative;
+    margin: calc(2 * #{$unit}) 0px;
+    text-transform: uppercase;
+    color: $primaryColor;
+    font-weight: 500;
+    padding: calc(1 * #{$unit});
+    border: 1px solid $primaryColor;
+    text-align: center;
+    width: 100%;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
