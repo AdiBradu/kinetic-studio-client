@@ -16,6 +16,7 @@ export default function HeroSection() {
         source2556={'https://kineticstudio.ro/images/heroImage__2556W.webp'}
         imageAlt={'Kinetic Studio'}
         classe={'hero-image'}
+        fetchpriority={'high'}
       />
       <div className="hero-body">
         <div className="hero-body-message">

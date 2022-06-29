@@ -3,11 +3,22 @@ import './CardTerapeut.component.scss';
 import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component.jsx';
 import { toCapitalCase } from '../../../utils.js';
 
-export default function CardTerapeut({ image, imageAlt, nume, specializare, descriere }) {
+export default function CardTerapeut({
+  image,
+  imageAlt,
+  nume,
+  specializare,
+  descriere,
+}) {
   return (
     <div className="card-terapeut">
       <div className="card-terapeut-header">
-        <ImagePlaceholder image={image} imageAlt={imageAlt} classe={'card-image'} />
+        <ImagePlaceholder
+          image={image}
+          imageAlt={imageAlt}
+          classe={'card-image'}
+          fetchpriority={'low'}
+        />
       </div>
       <div className="card-terapeut-body">
         <div className="card-terapeut-body-data">

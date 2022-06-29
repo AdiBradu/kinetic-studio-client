@@ -30,6 +30,7 @@ export default function CardServiciu({
           image={image}
           imageAlt={imageAlt}
           classe={'card-image'}
+          fetchpriority={'low'}
         />
       </div>
       <div className="card-serviciu-body">

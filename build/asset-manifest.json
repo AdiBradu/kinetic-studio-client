@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a78d7a2d.css",
-    "main.js": "/static/js/main.3862e8e7.js",
+    "main.css": "/static/css/main.db6f39be.css",
+    "main.js": "/static/js/main.dc97b085.js",
     "static/js/787.604bf1a5.chunk.js": "/static/js/787.604bf1a5.chunk.js",
     "static/media/masajRelaxare.jpg": "/static/media/masajRelaxare.0ce00aded6da36af0609.jpg",
     "static/media/masajTerapeutic.jpg": "/static/media/masajTerapeutic.53f96993dabe54543d8e.jpg",
@@ -10,12 +10,12 @@
     "static/media/netopia.webp": "/static/media/netopia.36544c994bf481f47ef0.webp",
     "static/media/iconCallButton.svg": "/static/media/iconCallButton.6d8ae62a8fe2a750c06f05aea7c57b24.svg",
     "index.html": "/index.html",
-    "main.a78d7a2d.css.map": "/static/css/main.a78d7a2d.css.map",
-    "main.3862e8e7.js.map": "/static/js/main.3862e8e7.js.map",
+    "main.db6f39be.css.map": "/static/css/main.db6f39be.css.map",
+    "main.dc97b085.js.map": "/static/js/main.dc97b085.js.map",
     "787.604bf1a5.chunk.js.map": "/static/js/787.604bf1a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a78d7a2d.css",
-    "static/js/main.3862e8e7.js"
+    "static/css/main.db6f39be.css",
+    "static/js/main.dc97b085.js"
   ]
 }
