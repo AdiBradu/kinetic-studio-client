@@ -13,7 +13,19 @@ export default function MasajeSection() {
       <div className={isTablet ? 'row flex-row' : 'row flex-column'}>
         <ImagePlaceholder
           key={'terapeutic'}
-          image={'https://kineticstudio.ro/images/masajTerapeutic.webp'}
+          image={'https://kineticstudio.ro/images/masajTerapeutic__375W.webp'}
+          source768={
+            'https://kineticstudio.ro/images/masajTerapeutic__768W.webp'
+          }
+          source1200={
+            'https://kineticstudio.ro/images/masajTerapeutic__1200W.webp'
+          }
+          source1920={
+            'https://kineticstudio.ro/images/masajTerapeutic__1920W.webp'
+          }
+          source2556={
+            'https://kineticstudio.ro/images/masajTerapeutic__2556W.webp'
+          }
           imageAlt={'masajTerapeutic'}
           classe={'masaj-terapeutic'}
         />
@@ -42,7 +54,17 @@ export default function MasajeSection() {
       <div className={isTablet ? 'row row-reverse' : 'row flex-column'}>
         <ImagePlaceholder
           key={'relaxare'}
-          image={'https://kineticstudio.ro/images/masajRelaxare.webp'}
+          image={'https://kineticstudio.ro/images/masajRelaxare__375W.webp'}
+          source768={'https://kineticstudio.ro/images/masajRelaxare__768W.webp'}
+          source1200={
+            'https://kineticstudio.ro/images/masajRelaxare__1200W.webp'
+          }
+          source1920={
+            'https://kineticstudio.ro/images/masajRelaxare__1920W.webp'
+          }
+          source2556={
+            'https://kineticstudio.ro/images/masajRelaxare__2556W.webp'
+          }
           imageAlt={'masajRelaxare'}
           classe={'masaj-relaxare'}
         />

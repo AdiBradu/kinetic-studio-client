@@ -5,6 +5,8 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+$xxxl: 1920px;
+$twok: 2556px;
 
 //Singularity
 $unit: 16px;
@@ -25,5 +27,7 @@ $unit: 16px;
   lg: $lg;
   xl: $xl;
   xxl: $xxl;
+  xxxl: $xxxl;
+  twok: $twok;
   unit: $unit;
 }

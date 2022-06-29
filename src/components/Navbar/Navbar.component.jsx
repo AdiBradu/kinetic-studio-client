@@ -25,7 +25,7 @@ export default function Navbar() {
             : 'container flex mx-auto space-between padding align-center'
         }
       >
-        <Link to={'/'} onClick={() => handleNavlinkClick()}>
+        <Link to={'/'} onClick={() => handleNavlinkClick()} rel="logo">
           <Logo />
         </Link>
         {!isDesktop ? <MenuToggler /> : ''}

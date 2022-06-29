@@ -40,15 +40,15 @@ export default function Navlink({ navlink, inView, custom }) {
   }, [navlink]);
 
   return (
-    <Link to={`/`}>
-      <motion.li
-        className="navlink"
-        onClick={() => handleNavlinkClick()}
-        animate={fadeInChildren}
-        custom={custom}
-      >
+    <motion.li
+      className="navlink"
+      onClick={() => handleNavlinkClick()}
+      animate={fadeInChildren}
+      custom={custom}
+    >
+      <Link to={`/`}>
         <p>{navlink}</p>
-      </motion.li>
-    </Link>
+      </Link>
+    </motion.li>
   );
 }

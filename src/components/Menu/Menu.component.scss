@@ -17,9 +17,10 @@
     :last-child {
       margin-bottom: 0px;
     }
-    a {
-      li {
-        padding-bottom: $unit;
+    li {
+      padding-bottom: $unit;
+      a {
+        display: block;
         P {
           color: $textLight;
           text-align: center;
@@ -27,7 +28,7 @@
         :hover {
           cursor: pointer;
           opacity: 0.75;
-          transition: all 300ms
+          transition: all 300ms;
         }
       }
     }
@@ -40,12 +41,12 @@
     ul {
       display: flex;
       justify-content: flex-end;
-      a {
-        margin-bottom: auto;
-        margin-top: auto;
-        margin-left: calc(2 * #{$unit});
-        li {
-          padding-bottom: 0px;
+      li {
+        padding-bottom: 0px;
+        a {
+          margin-bottom: auto;
+          margin-top: auto;
+          margin-left: calc(2 * #{$unit});
           p {
             font-size: calc(0.8125 * #{$unit});
           }

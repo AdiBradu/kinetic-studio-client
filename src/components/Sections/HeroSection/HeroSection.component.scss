@@ -3,6 +3,7 @@
   position: relative;
   height: var(--doc-height);
   width: 100%;
+  min-height: 640px;
   display: flex;
   flex-direction: column;
   align-items: center;

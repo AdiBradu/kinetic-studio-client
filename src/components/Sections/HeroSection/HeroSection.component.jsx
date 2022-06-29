@@ -9,7 +9,11 @@ export default function HeroSection() {
   return (
     <section className="hero-section">
       <ImagePlaceholder
-        image={'https://kineticstudio.ro/images/heroImage.webp'}
+        image={'https://kineticstudio.ro/images/heroImage__375W.webp'}
+        source768={'https://kineticstudio.ro/images/heroImage__768W.webp'}
+        source1200={'https://kineticstudio.ro/images/heroImage__1200W.webp'}
+        source1920={'https://kineticstudio.ro/images/heroImage__1920W.webp'}
+        source2556={'https://kineticstudio.ro/images/heroImage__2556W.webp'}
         imageAlt={'Kinetic Studio'}
         classe={'hero-image'}
       />

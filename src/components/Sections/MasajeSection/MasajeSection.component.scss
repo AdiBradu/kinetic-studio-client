@@ -89,7 +89,7 @@
           margin-left: calc((100vw - 768px) * 0.5);
         }
         @media (min-width: $xl) {
-          margin-left: calc((100vw - 992px) * 0.5) - 9px;
+          margin-left: calc((100vw - 992px) * 0.5 - 9px);
         }
         @media (min-width: $xxl) {
           margin-left: calc((100vw - 1200px) * 0.5 - 9px);

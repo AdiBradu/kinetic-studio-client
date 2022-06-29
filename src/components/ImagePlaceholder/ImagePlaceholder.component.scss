@@ -1,47 +1,56 @@
 @import '../../styles/variables.module.scss';
+
 img {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   object-fit: cover;
 }
-img.hero-image {
+
+picture.hero-image {
+  inset: 0;
+  object-fit: cover;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  filter: brightness(30%);
+  img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(40%);
+  }
 }
 
-img.masaj-relaxare,
-img.masaj-terapeutic {
-  position: relative;
-  width: 100%;
-  height: 400px;
+picture.masaj-relaxare,
+picture.masaj-terapeutic {
   @media (min-width: $md) {
     width: 50%;
-    height: 640px;
   }
-  @media (min-width: $xxl) {
-    height: 800px;
+  img {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    @media (min-width: $md) {
+      height: 640px;
+    }
+    @media (min-width: $xxl) {
+      height: 800px;
+    }
   }
 }
 
-img.netopia {
-  position: relative;
-  height: auto;
+picture.netopia {
   width: 100%;
-  object-fit: contain;
-  margin-bottom: auto;
-  @media (min-width: $md) {
-    width: 25%;
+  img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: auto;
   }
 }
 
-img.card-image {
+picture.card-image {
+  width: 100%;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  inset: 0;
+  img {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
 }
