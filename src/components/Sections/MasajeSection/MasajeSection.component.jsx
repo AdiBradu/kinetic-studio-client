@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import './MasajeSection.component.scss';
 import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component.jsx';
-import MasajRelaxare from '../../../assets/images/masajRelaxare.jpg';
-import MasajTerapeutic from '../../../assets/images/masajTerapeutic.jpg';
 import { AppContext } from '../../../contexts/AppContext';
 
 export default function MasajeSection() {

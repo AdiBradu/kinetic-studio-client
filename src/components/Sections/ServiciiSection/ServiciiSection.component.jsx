@@ -6,7 +6,6 @@ import { AppContext } from '../../../contexts/AppContext';
 import { processServices, scrollSlider } from '../../../utils.js';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_SERVICES } from '../../../graphql/queries';
-import { useFilterServicii } from '../../../hooks/useFilterServicii.jsx';
 
 export default function ServiciiSection() {
   const { isTablet } = useContext(AppContext);
@@ -50,15 +49,16 @@ export default function ServiciiSection() {
             <CardServiciu
               key={index}
               nume={serviciu.denumire}
-              // image={
-              //   'https://upload.wikimedia.org/wikipedia/commons/3/35/Orange_question_mark.svg'
-              // }
               image={serviciu.image}
               imageAlt={serviciu.denumire}
               tarif={serviciu.tarif}
               sedinte={serviciu.sedinte}
               durata={serviciu.durata}
-              masaj={serviciu.denumire.toLowerCase().includes('terapeutic') ? 'terapeutic' : 'relaxare'}
+              masaj={
+                serviciu.denumire.toLowerCase().includes('terapeutic')
+                  ? 'terapeutic'
+                  : 'relaxare'
+              }
             />
           ))}
         </div>
