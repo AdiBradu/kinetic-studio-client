@@ -30,7 +30,7 @@ export default function TerapeutiSection() {
   }, [queryData]);
 
   return (
-    <div
+    <section
       className={
         isTablet
           ? 'terapeuti-section container mx-auto'
@@ -58,6 +58,6 @@ export default function TerapeutiSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

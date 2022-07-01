@@ -4,11 +4,11 @@ import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component.
 import { AppContext } from '../../../contexts/AppContext';
 
 export default function MasajeSection() {
-  const { isTablet } = useContext(AppContext);
+  const { isLarge } = useContext(AppContext);
 
   return (
-    <div className="masaje-section">
-      <div className={isTablet ? 'row flex-row' : 'row flex-column'}>
+    <section className="masaje-section">
+      <div className={isLarge ? 'row flex-row' : 'row flex-column'}>
         <ImagePlaceholder
           key={'terapeutic'}
           image={'https://kineticstudio.ro/images/masajTerapeutic__375W.webp'}
@@ -50,7 +50,7 @@ export default function MasajeSection() {
           </div>
         </div>
       </div>
-      <div className={isTablet ? 'row row-reverse' : 'row flex-column'}>
+      <div className={isLarge ? 'row row-reverse' : 'row flex-column'}>
         <ImagePlaceholder
           key={'relaxare'}
           image={'https://kineticstudio.ro/images/masajRelaxare__375W.webp'}
@@ -89,6 +89,6 @@ export default function MasajeSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

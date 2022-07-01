@@ -6,9 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: $unit;
-  margin-top: calc(6 * #{$unit});
   background-color: $primaryColorExtraLight;
-  margin-top: calc(4 * #{$unit});
   @media (min-width: $md) {
     flex-direction: row;
     flex-wrap: wrap;

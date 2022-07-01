@@ -14,7 +14,7 @@ export const wathcResize = () => {
 };
 
 export const toCapitalCase = (word) => {
-  if(word) {
+  if (word) {
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
   }
 };
@@ -168,7 +168,7 @@ export const scrollSlider = (input) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 3; //scroll-fast
+    const walk = (x - startX) * 1.5; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
   });
 };

@@ -4,18 +4,17 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: calc(4 * #{$unit});
   align-items: center;
   .row {
     background-color: $primaryColorLight;
     border-bottom: 1px solid $border;
-    @media (min-width: $md) {
+    @media (min-width: $lg) {
       background-color: transparent;
       border-bottom: none;
     }
     &:last-of-type {
-      margin-top: calc(6 * #{$unit});
-      @media (min-width: $md) {
+      margin-top: calc(3 * #{$unit});
+      @media (min-width: $lg) {
         margin-top: 0px;
       }
     }
@@ -25,20 +24,23 @@
       display: flex;
       align-items: center;
       @media (min-width: $md) {
-        width: 50%;
-        height: 640px;
-        padding: 0px calc(2 * #{$unit});
+        // width: 50%;
+        // height: 640px;
+        // padding: 0px calc(2 * #{$unit});
       }
       @media (min-width: $lg) {
+        width: 50%;
+        height: 75vh;
         padding: 0px;
-        padding: 0px 0px 0px calc(3 * #{$unit});
+        // padding: 0px 0px 0px calc(3 * #{$unit});
       }
       @media (min-width: $xl) {
-        padding: 0px 0px 0px calc(4 * #{$unit});
+        // height: 800px;
+        // padding: 0px 0px 0px calc(4 * #{$unit});
       }
       @media (min-width: $xxl) {
-        height: 800px;
-        padding: 0px 0px 0px calc(6 * #{$unit});
+        // height: 960px;
+        // padding: 0px 0px 0px calc(6 * #{$unit});
       }
       .half-container {
         display: flex;
@@ -48,19 +50,31 @@
         width: 100%;
         padding: calc(2.5 * #{$unit}) $unit;
         @media (min-width: $md) {
-          height: 640px;
-          padding: 0px;
+          // height: 640px;
+          // height: 75vh;
+          // padding: 0px;
+          // margin: auto;
+          // max-width: 75%;
+          max-width: 576px;
+          margin: auto;
+          padding: calc(2.5 * #{$unit}) 0px;
         }
         @media (min-width: $lg) {
-          margin-right: calc((100vw - 768px) * 0.5);
+          height: 75vh;
+          padding: 0px;
+          margin: auto;
+          max-width: 75%;
+          // margin-right: calc((100vw - 768px) * 0.5);
         }
         @media (min-width: $xl) {
-          margin-right: calc((100vw - 992px) * 0.5 - 9px);
+          // height: 800px;
+          // margin-right: calc((100vw - 992px) * 0.5 - 9px);
+          max-width: 480px;
         }
-        @media (min-width: $xxl) {
-          height: 800px;
-          margin-right: calc((100vw - 1200px) * 0.5 - 9px);
-        }
+        // @media (min-width: $xxl) {
+        //   // height: 960px;
+        //   margin-right: calc((100vw - 1200px) * 0.5 - 9px);
+        // }
         .masaj-body-header {
           display: flex;
           flex-direction: column;
@@ -71,29 +85,60 @@
   }
   .row-reverse {
     .masaj-body {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      @media (min-width: $md) {
+        // width: 50%;
+      }
       @media (min-width: $lg) {
-        padding: 0px calc(3 * #{$unit}) 0px 0px;
+        width: 50%;
+        height: 75vh;
+        padding: 0px;
+        // padding: 0px calc(3 * #{$unit}) 0px 0px;
       }
-      @media (min-width: $xl) {
-        padding: 0px calc(4 * #{$unit}) 0px 0px;
-      }
-      @media (min-width: $xxl) {
-        padding: 0px calc(6 * #{$unit}) 0px 0px;
-      }
+      // @media (min-width: $xl) {
+      //   padding: 0px calc(4 * #{$unit}) 0px 0px;
+      // }
+      // @media (min-width: $xxl) {
+      //   padding: 0px calc(6 * #{$unit}) 0px 0px;
+      // }
       .half-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: $unit;
+        width: 100%;
+        padding: calc(2.5 * #{$unit}) $unit;
         @media (min-width: $md) {
-          padding: 0px;
+          // height: 640px;
+          // height: 75vh;
+          // padding: 0px;
+          // margin: auto;
+          // max-width: 75%;
+          max-width: 576px;
+          margin: auto;
+          padding: calc(2.5 * #{$unit}) 0px;
         }
         @media (min-width: $lg) {
-          margin-right: 0px;
-          margin-left: calc((100vw - 768px) * 0.5);
+          height: 75vh;
+          padding: 0px;
+          margin: auto;
+          max-width: 75%;
+          // height: 75vh;
+          // margin-right: 0px;
+          // margin-left: calc((100vw - 768px) * 0.5);
         }
         @media (min-width: $xl) {
-          margin-left: calc((100vw - 992px) * 0.5 - 9px);
+          // height: 800px;
+          // margin-left: calc((100vw - 992px) * 0.5 - 9px);
+          max-width: 480px;
         }
-        @media (min-width: $xxl) {
-          margin-left: calc((100vw - 1200px) * 0.5 - 9px);
-        }
+        // @media (min-width: $xxl) {
+        //   // height: 960px;
+        //   margin-left: calc((100vw - 1200px) * 0.5 - 9px);
+        // }
       }
     }
   }

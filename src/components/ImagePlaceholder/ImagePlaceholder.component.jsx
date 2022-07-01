@@ -13,7 +13,7 @@ export default function ImagePlaceholder({
   fetchpriority,
 }) {
   return (
-    <div>
+    <>
       <img
         className={classe}
         srcSet={`${source768 ? source768 : image} 768w, ${
@@ -25,6 +25,6 @@ export default function ImagePlaceholder({
         alt={imageAlt}
         fetchpriority={fetchpriority}
       />
-    </div>
+    </>
   );
 }

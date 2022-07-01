@@ -8,7 +8,7 @@
   overflow-x: hidden;
   .container,
   .container-fluid {
-    display: flexbox;
+    display: flex;
     flex-wrap: wrap;
     .follow-us {
       gap: $unit;

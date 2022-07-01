@@ -271,7 +271,7 @@ export default function ProgramareSection() {
       ) : isError ? (
         <ErrorScreen />
       ) : (
-        <div
+        <section
           className={
             isTablet
               ? 'programare-section container mx-auto'
@@ -501,7 +501,7 @@ export default function ProgramareSection() {
               ''
             )}
           </div>
-        </div>
+        </section>
       )}
     </>
   );

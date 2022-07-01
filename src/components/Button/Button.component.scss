@@ -25,7 +25,6 @@ button {
   border: 1px solid $primaryColor;
   border-radius: calc(0.25 * #{$unit});
   width: 100%;
-  max-width: 240px;
   &:hover {
     cursor: pointer;
     opacity: 0.75;

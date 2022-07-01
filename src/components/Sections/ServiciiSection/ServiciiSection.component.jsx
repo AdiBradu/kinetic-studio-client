@@ -29,7 +29,7 @@ export default function ServiciiSection() {
   }, [queryData]);
 
   return (
-    <div
+    <section
       className={
         isTablet
           ? 'servicii-section container mx-auto'
@@ -63,6 +63,6 @@ export default function ServiciiSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

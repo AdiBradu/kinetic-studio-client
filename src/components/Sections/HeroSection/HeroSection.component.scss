@@ -26,6 +26,9 @@
     .btn-wrapper {
       width: 100%;
       max-width: 240px;
+      @media (min-width: $lg) {
+        max-width: 320px;
+      }
     }
     .hero-body-message {
       display: flex;
