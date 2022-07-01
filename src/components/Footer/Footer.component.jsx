@@ -29,6 +29,7 @@ export default function Footer() {
           image={Netopia}
           imageAlt={'Netopia'}
           classe={'netopia flex'}
+          fetchpriority={'low'}
         />
         <div className="footer-logo flex">
           <FooterLogo />

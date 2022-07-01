@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, Suspense, lazy } from 'react';
 import './CardServiciu.component.scss';
 import ButtonProgramare from '../../Button/Button.component.jsx';
-import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component.jsx';
 import { AppContext } from '../../../contexts/AppContext.js';
 import { scrollToTarget } from '../../../utils.js';
+import Spinner from '../../Spinner/Spinner.component';
+
+const ImagePlaceholder = lazy(() =>
+  import('../../ImagePlaceholder/ImagePlaceholder.component.jsx'),
+);
 
 export default function CardServiciu({
   nume,
@@ -26,12 +30,14 @@ export default function CardServiciu({
     <div className="card-serviciu">
       <div className="card-serviciu-header">
         <p className="card">{nume}</p>
-        <ImagePlaceholder
-          image={image}
-          imageAlt={imageAlt}
-          classe={'card-image'}
-          fetchpriority={'low'}
-        />
+        <Suspense fallback={<Spinner />}>
+          <ImagePlaceholder
+            image={image}
+            imageAlt={imageAlt}
+            classe={'card-image'}
+            fetchpriority={'low'}
+          />
+        </Suspense>
       </div>
       <div className="card-serviciu-body">
         <div className="card-serviciu-body-data">

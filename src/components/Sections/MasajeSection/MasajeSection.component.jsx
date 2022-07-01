@@ -1,7 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, Suspense, lazy } from 'react';
 import './MasajeSection.component.scss';
-import ImagePlaceholder from '../../ImagePlaceholder/ImagePlaceholder.component.jsx';
 import { AppContext } from '../../../contexts/AppContext';
+import Spinner from '../../Spinner/Spinner.component';
+
+const ImagePlaceholder = lazy(() =>
+  import('../../ImagePlaceholder/ImagePlaceholder.component.jsx'),
+);
 
 export default function MasajeSection() {
   const { isLarge } = useContext(AppContext);
@@ -9,25 +13,27 @@ export default function MasajeSection() {
   return (
     <section className="masaje-section">
       <div className={isLarge ? 'row flex-row' : 'row flex-column'}>
-        <ImagePlaceholder
-          key={'terapeutic'}
-          image={'https://kineticstudio.ro/images/masajTerapeutic__375W.webp'}
-          source768={
-            'https://kineticstudio.ro/images/masajTerapeutic__768W.webp'
-          }
-          source1200={
-            'https://kineticstudio.ro/images/masajTerapeutic__1200W.webp'
-          }
-          source1920={
-            'https://kineticstudio.ro/images/masajTerapeutic__1920W.webp'
-          }
-          source2556={
-            'https://kineticstudio.ro/images/masajTerapeutic__2556W.webp'
-          }
-          imageAlt={'masajTerapeutic'}
-          classe={'masaj-terapeutic'}
-          fetchpriority={'low'}
-        />
+        <Suspense fallback={<Spinner />}>
+          <ImagePlaceholder
+            key={'terapeutic'}
+            image={'https://kineticstudio.ro/images/masajTerapeutic__375W.webp'}
+            source768={
+              'https://kineticstudio.ro/images/masajTerapeutic__768W.webp'
+            }
+            source1200={
+              'https://kineticstudio.ro/images/masajTerapeutic__1200W.webp'
+            }
+            source1920={
+              'https://kineticstudio.ro/images/masajTerapeutic__1920W.webp'
+            }
+            source2556={
+              'https://kineticstudio.ro/images/masajTerapeutic__2556W.webp'
+            }
+            imageAlt={'masajTerapeutic'}
+            classe={'masaj-terapeutic'}
+            fetchpriority={'low'}
+          />
+        </Suspense>
         <div className="masaj-body">
           <div className="half-container">
             <div className="masaj-body-header">
@@ -51,23 +57,27 @@ export default function MasajeSection() {
         </div>
       </div>
       <div className={isLarge ? 'row row-reverse' : 'row flex-column'}>
-        <ImagePlaceholder
-          key={'relaxare'}
-          image={'https://kineticstudio.ro/images/masajRelaxare__375W.webp'}
-          source768={'https://kineticstudio.ro/images/masajRelaxare__768W.webp'}
-          source1200={
-            'https://kineticstudio.ro/images/masajRelaxare__1200W.webp'
-          }
-          source1920={
-            'https://kineticstudio.ro/images/masajRelaxare__1920W.webp'
-          }
-          source2556={
-            'https://kineticstudio.ro/images/masajRelaxare__2556W.webp'
-          }
-          imageAlt={'masajRelaxare'}
-          classe={'masaj-relaxare'}
-          fetchpriority={'low'}
-        />
+        <Suspense fallback={<Spinner />}>
+          <ImagePlaceholder
+            key={'relaxare'}
+            image={'https://kineticstudio.ro/images/masajRelaxare__375W.webp'}
+            source768={
+              'https://kineticstudio.ro/images/masajRelaxare__768W.webp'
+            }
+            source1200={
+              'https://kineticstudio.ro/images/masajRelaxare__1200W.webp'
+            }
+            source1920={
+              'https://kineticstudio.ro/images/masajRelaxare__1920W.webp'
+            }
+            source2556={
+              'https://kineticstudio.ro/images/masajRelaxare__2556W.webp'
+            }
+            imageAlt={'masajRelaxare'}
+            classe={'masaj-relaxare'}
+            fetchpriority={'low'}
+          />
+        </Suspense>
         <div className="masaj-body">
           <div className="half-container">
             <div className="masaj-body-header">
