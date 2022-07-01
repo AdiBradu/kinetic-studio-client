@@ -3,7 +3,6 @@ import './Footer.component.scss';
 import variables from '../../styles/_variables.module.scss';
 import FooterLinks from './FooterLinks/FooterLinks.component';
 import SocialMediaGroup from '../SocialMediaGroup/SocialMediaGroup.component';
-import Netopia from '../../assets/images/netopia.webp';
 import ImagePlaceholder from '../ImagePlaceholder/ImagePlaceholder.component.jsx';
 import { ReactComponent as FooterLogo } from '../../assets/logos/logoKineticStudioPortrait.svg';
 import { AppContext } from '../../contexts/AppContext';
@@ -26,7 +25,7 @@ export default function Footer() {
           <SocialMediaGroup color={variables.textDark} />
         </div>
         <ImagePlaceholder
-          image={Netopia}
+          image={'https://kineticstudio.ro/images/netopia.webp'}
           imageAlt={'Netopia'}
           classe={'netopia flex'}
           fetchpriority={'low'}
