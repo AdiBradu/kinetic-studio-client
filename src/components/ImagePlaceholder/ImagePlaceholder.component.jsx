@@ -13,12 +13,18 @@ export default function ImagePlaceholder({
   fetchpriority,
 }) {
   return (
-    <picture className={classe}>
-      <source srcSet={source768} media={`(min-width: ${variables.md})`} />
-      <source srcSet={source1200} media={`(min-width: ${variables.xl})`} />
-      <source srcSet={source1920} media={`(min-width: ${variables.xxxl})`} />
-      <source srcSet={source2556} media={`(min-width: ${variables.twok})`} />
-      <img src={image} alt={imageAlt} fetchpriority={fetchpriority} />
-    </picture>
+    <div>
+      <img
+        className={classe}
+        srcSet={`${source768 ? source768 : image} 768w, ${
+          source1200 ? source1200 : image
+        } 1200w, ${source1920 ? source1920 : image} 1920w, ${
+          source2556 ? source2556 : image
+        } 2556w`}
+        src={image}
+        alt={imageAlt}
+        fetchpriority={fetchpriority}
+      />
+    </div>
   );
 }
