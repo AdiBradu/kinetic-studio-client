@@ -24,7 +24,7 @@ function App() {
         <title>Kinetic Studio</title>
         <meta
           name="description"
-          content="Masaj de relaxare si terapeutic la domiciliu."
+          content="Masaj de relaxare si terapeutic la domiciliu in Bucuresti si Ilfov."
         />
       </Helmet>
 

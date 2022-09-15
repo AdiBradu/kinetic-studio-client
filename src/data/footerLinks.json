@@ -5,10 +5,14 @@
   },
   {
     "id": 2,
-    "link": "politica cookies"
+    "link": "termeni si conditii"
   },
   {
     "id": 3,
+    "link": "politica cookies"
+  },
+  {
+    "id": 4,
     "link": "plata online"
   }
 ]

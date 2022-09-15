@@ -3,6 +3,7 @@ import './FooterLinks.component.scss';
 import footerLinks from '../../../data/footerLinks.json';
 import ModalGdpr from '../../Modal/GDPR/ModalGdpr.component';
 import ModalCookies from '../../Modal/Cookies/ModalCookies.component';
+import ModalTermeni from '../../Modal/Termeni/ModalTermeni.componet';
 
 import { useState } from 'react';
 
@@ -29,6 +30,8 @@ export default function FooterLinks() {
         <ModalGdpr handleClose={handleClose} />
       ) : visible & (link === 'politica cookies') ? (
         <ModalCookies handleClose={handleClose} />
+      ) : visible & (link === 'termeni si conditii') ? (
+        <ModalTermeni handleClose={handleClose} />
       ) : (
         ''
       )}

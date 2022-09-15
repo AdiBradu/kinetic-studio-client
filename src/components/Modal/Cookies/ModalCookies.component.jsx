@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Modal.component.scss';
 
-export default function ModalGdpr({ handleClose }) {
+export default function ModalCookies({ handleClose }) {
   return (
     <div className="modal padding">
       <div className="container">
