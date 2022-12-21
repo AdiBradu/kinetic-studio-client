@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import './App.scss';
 // import Navbar from './components/Navbar/Navbar.component.jsx';
 import LandingPage from './pages/LandingPage/LandingPage.component.jsx';
