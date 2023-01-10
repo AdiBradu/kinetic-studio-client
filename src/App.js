@@ -4,6 +4,7 @@ import './App.scss';
 import LandingPage from './pages/LandingPage/LandingPage.component.jsx';
 import FourOFourPage from './pages/404Page/FourOFourPage.component';
 import Footer from './components/Footer/Footer.component';
+import { ReturnPage } from './pages/ReturnPage/ReturnPage';
 import { NavbarProvider } from './contexts/NavbarContext.js';
 import { documentHeight, wathcResize } from './utils.js';
 import { Helmet } from 'react-helmet';
@@ -36,6 +37,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/comanda" element={<ReturnPage />} />
         <Route path="*" element={<FourOFourPage />} />
       </Routes>
 
