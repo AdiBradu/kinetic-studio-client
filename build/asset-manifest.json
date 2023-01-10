@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8207bcd7.css",
-    "main.js": "/static/js/main.7c56e7b2.js",
+    "main.css": "/static/css/main.bb37cb52.css",
+    "main.js": "/static/js/main.f6f90ecc.js",
     "static/css/333.e3cf7a59.chunk.css": "/static/css/333.e3cf7a59.chunk.css",
     "static/js/333.f3bbf622.chunk.js": "/static/js/333.f3bbf622.chunk.js",
     "static/css/829.b17aec44.chunk.css": "/static/css/829.b17aec44.chunk.css",
@@ -20,8 +20,8 @@
     "static/media/logoKineticStudioPortrait.svg": "/static/media/logoKineticStudioPortrait.ac1766d3e02489a8cea89074dfb564fa.svg",
     "static/media/iconCallButton.svg": "/static/media/iconCallButton.6d8ae62a8fe2a750c06f05aea7c57b24.svg",
     "index.html": "/index.html",
-    "main.8207bcd7.css.map": "/static/css/main.8207bcd7.css.map",
-    "main.7c56e7b2.js.map": "/static/js/main.7c56e7b2.js.map",
+    "main.bb37cb52.css.map": "/static/css/main.bb37cb52.css.map",
+    "main.f6f90ecc.js.map": "/static/js/main.f6f90ecc.js.map",
     "333.e3cf7a59.chunk.css.map": "/static/css/333.e3cf7a59.chunk.css.map",
     "333.f3bbf622.chunk.js.map": "/static/js/333.f3bbf622.chunk.js.map",
     "829.b17aec44.chunk.css.map": "/static/css/829.b17aec44.chunk.css.map",
@@ -38,7 +38,7 @@
     "372.afd5e619.chunk.js.map": "/static/js/372.afd5e619.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8207bcd7.css",
-    "static/js/main.7c56e7b2.js"
+    "static/css/main.bb37cb52.css",
+    "static/js/main.f6f90ecc.js"
   ]
 }
